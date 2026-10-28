@@ -776,10 +776,10 @@ ul {
 
 .big img {
   width: 100%;
-  height: 120%;
+  height: 130%;
   object-fit: cover;
   position: absolute;
-  top: -10%;
+  top: -15%;
 }
 
 .big::after {
@@ -862,8 +862,27 @@ ul {
   letter-spacing: 0.16em;
 }
 
-.gs-on .stage {
+.gs-on .story {
+  padding: 0;
+}
+
+.gs-on .slist {
   display: none;
+}
+
+.gs-on .stage {
+  display: grid;
+  position: sticky;
+  top: 0;
+  grid-template-columns: 0.9fr 1.1fr;
+  height: 100svh;
+  height: 100dvh;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  padding: calc(var(--hh) + 1.2rem) var(--pad) 1.6rem;
+  max-width: 1360px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 @media (min-width: 860px) {
@@ -1075,6 +1094,10 @@ ul {
   padding-bottom: 0.2rem;
 }
 
+.hs-in {
+  display: block;
+}
+
 .hs .prog {
   display: none;
 }
@@ -1089,17 +1112,36 @@ ul {
 .gs-on .hs {
   height: auto;
   display: block;
-  padding: clamp(2.5rem, 6vw, 4.5rem) 0 2rem;
+  padding: 0;
+  overflow: visible;
+}
+
+.gs-on .hs-in {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: calc(var(--hh) + 0.6rem) 0 1.2rem;
+}
+
+.gs-on .hs .prog {
+  display: block;
+  margin: 0.8rem var(--pad) 0;
+  max-width: none;
 }
 
 .gs-on .ht {
-  overflow-x: auto;
-  overflow-y: hidden;
-  width: 100%;
-  max-width: 100%;
-  padding-right: var(--pad);
-  scroll-snap-type: x mandatory;
-  gap: 1.2rem;
+  overflow: visible;
+  width: max-content;
+  max-width: none;
+  padding-right: 8vw;
+  scroll-snap-type: none;
+  gap: 3vw;
   align-items: flex-start;
 }
 
@@ -1248,8 +1290,8 @@ ul {
 }
 
 .gs-on .sy {
-  min-height: 70svh;
-  min-height: 70dvh;
+  min-height: 46svh;
+  min-height: 46dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1293,8 +1335,8 @@ ul {
   }
 
   .gs-on .sy {
-    min-height: 56svh;
-    min-height: 56dvh;
+    min-height: 0;
+    padding: 1.35rem 0 1.6rem;
   }
 
   .gs-on .sync .eyebrow {
@@ -2879,9 +2921,9 @@ form {
       '</div><div class="prog"><i></i></div></div><div class="pics">' +
       tis +
       '</div></div></section>' +
-      '<section class="hs" id="hs"><div class="hd wrap"><div><span class="eyebrow" style="color:var(--amber)">Programmes</span><h2>The <em>courses</em>.</h2></div><span class="hint">Scroll to explore →</span></div><div class="ht">' +
+      '<section class="hs" id="hs"><div class="hs-in"><div class="hd wrap"><div><span class="eyebrow" style="color:var(--amber)">Programmes</span><h2>The <em>courses</em>.</h2></div><span class="hint">Scroll to explore →</span></div><div class="ht">' +
       panels +
-      '</div><div class="prog"><i></i></div></section>' +
+      '</div><div class="prog"><i></i></div></div></section>' +
       '<section class="sec sync" id="sync"><div class="wrap"><div class="sticky"><div class="box">' +
       syi +
       '</div><div class="prog"><i></i></div></div><div><span class="eyebrow">Who we teach</span>' +
@@ -3299,57 +3341,43 @@ form {
         var M = ctx.conditions.isM
         $$('[data-clip]').forEach(function (el) {
           var im = $('img', el)
-          gsap.fromTo(
-            el,
-            { clipPath: 'inset(0 100% 0 0)' },
-            {
-              clipPath: 'inset(0 0% 0 0)',
-              duration: 1.3,
-              ease: 'power3.inOut',
-              scrollTrigger: { trigger: el, start: 'top 88%' },
-            },
-          )
-          if (im)
-            gsap.from(im, {
-              scale: 1.3,
-              duration: 1.8,
-              ease: 'power3.out',
-              scrollTrigger: { trigger: el, start: 'top 88%' },
-            })
+          if (!im) return
+          gsap.from(im, {
+            scale: 1.08,
+            duration: 1.1,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 96%' },
+          })
         })
         $$('[data-up]').forEach(function (el) {
           gsap.from(el, {
-            y: M ? 36 : 50,
-            opacity: 0,
-            duration: 0.9,
+            y: M ? 18 : 24,
+            duration: 0.7,
             ease: 'power2.out',
-            scrollTrigger: { trigger: el, start: 'top 90%' },
+            scrollTrigger: { trigger: el, start: 'top 96%' },
           })
         })
         $$('[data-alt]').forEach(function (el, i) {
           gsap.from(el, {
-            x: (i % 2 ? 70 : -70) * (M ? 0.45 : 1),
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: el, start: 'top 90%' },
+            x: (i % 2 ? 18 : -18) * (M ? 0.6 : 1),
+            duration: 0.7,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 96%' },
           })
         })
         $$('[data-ttl]').forEach(function (el) {
           gsap.from(el, {
-            y: M ? 40 : 60,
-            opacity: 0,
-            duration: 1,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: el, start: 'top 92%' },
+            y: M ? 16 : 22,
+            duration: 0.7,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 96%' },
           })
         })
         gsap.from('.ftr .fg>div', {
-          y: 40,
-          opacity: 0,
-          stagger: 0.1,
-          duration: 0.8,
-          scrollTrigger: { trigger: '.ftr', start: 'top 94%' },
+          y: 20,
+          stagger: 0.08,
+          duration: 0.6,
+          scrollTrigger: { trigger: '.ftr', start: 'top 96%' },
         })
         if (p === 'gallery') {
           gsap.set('.gal .gt', { opacity: 0, y: 50 })
@@ -3370,43 +3398,19 @@ form {
         if (p !== 'home') return
 
         var tl = gsap.timeline({
-          scrollTrigger: { trigger: '#about', start: 'top 72%' },
-          defaults: { ease: 'power3.out' },
+          scrollTrigger: { trigger: '#about', start: 'top 90%' },
+          defaults: { ease: 'power2.out' },
         })
-        tl.fromTo(
-          '#about .im',
-          { clipPath: 'inset(0 100% 0 0)' },
-          { clipPath: 'inset(0 0% 0 0)', duration: 1.3, ease: 'power3.inOut' },
-          0,
-        )
-          .from('#about .im img', { scale: 1.35, duration: 1.8 }, 0)
-          .from('#about .eyebrow', { opacity: 0, x: -20, duration: 0.6 }, 0.3)
-          .from('#about h2 .ln>span', { yPercent: 110, duration: 1, stagger: 0.12 }, 0.4)
-          .from(
-            '#about [data-a]:not(.eyebrow)',
-            { y: 30, opacity: 0, duration: 0.8, stagger: 0.12 },
-            0.9,
-          )
+        tl.from('#about .im img', { scale: 1.06, duration: 1 }, 0)
+          .from('#about .eyebrow', { x: -12, duration: 0.5 }, 0.05)
+          .from('#about h2', { y: 18, duration: 0.7 }, 0.08)
+          .from('#about [data-a]:not(.eyebrow)', { y: 14, duration: 0.6, stagger: 0.06 }, 0.12)
 
         gsap.fromTo(
-          '#big .fr',
-          { clipPath: 'inset(8% 6% 8% 6%)' },
-          {
-            clipPath: 'inset(0% 0% 0% 0%)',
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '#big',
-              start: 'top 92%',
-              end: 'top 60%',
-              scrub: true,
-            },
-          },
-        )
-        gsap.fromTo(
           '#big img',
-          { yPercent: -4, scale: 1.08 },
+          { yPercent: -3, scale: 1.05 },
           {
-            yPercent: 4,
+            yPercent: 3,
             scale: 1,
             ease: 'none',
             scrollTrigger: {
@@ -3417,11 +3421,82 @@ form {
             },
           },
         )
-        gsap.from('#big .cap', {
-          opacity: 0,
-          duration: 0.6,
-          scrollTrigger: { trigger: '#big', start: 'top 75%' },
-        })
+
+        var story = $('#story'),
+          tls = $$('#stage .tl'),
+          tis = $$('#stage .ti'),
+          n = tls.length,
+          cols = ['#101C36', '#14295e', '#0e3a4a', '#2a1f4d']
+        function sizeStory() {
+          if (!story || !n) return
+          story.style.height = n * window.innerHeight + 'px'
+        }
+        if (n) {
+          gsap.set(tls[0], { autoAlpha: 1, y: 0 })
+          gsap.set(tis[0], { autoAlpha: 1 })
+          gsap.set(tls.slice(1), { autoAlpha: 0, y: 12 })
+          gsap.set(tis.slice(1), { autoAlpha: 0 })
+          var storyTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: story,
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: true,
+              invalidateOnRefresh: true,
+            },
+          })
+          storyTl.to('#story .prog i', { scaleX: 1, ease: 'none', duration: Math.max(n - 1, 0.01) }, 0)
+          for (var i = 1; i < n; i++) {
+            storyTl
+              .to(tls[i - 1], { autoAlpha: 0, y: -12, duration: 0.5, ease: 'power1.inOut' }, i - 0.5)
+              .to(tis[i - 1], { autoAlpha: 0, duration: 0.5, ease: 'power1.inOut' }, i - 0.5)
+              .fromTo(
+                tls[i],
+                { autoAlpha: 0, y: 12 },
+                { autoAlpha: 1, y: 0, duration: 0.5, ease: 'power1.inOut' },
+                i - 0.5,
+              )
+              .fromTo(
+                tis[i],
+                { autoAlpha: 0 },
+                { autoAlpha: 1, duration: 0.5, ease: 'power1.inOut' },
+                i - 0.5,
+              )
+              .to('#story', { backgroundColor: cols[i % cols.length], duration: 0.5, ease: 'none' }, i - 0.5)
+          }
+        }
+
+        var hs = $('#hs'),
+          tr = $('.ht', hs)
+        function dist() {
+          return Math.max(0, tr.scrollWidth - window.innerWidth + (M ? 16 : 28))
+        }
+        function sizeHs() {
+          if (!hs || !tr) return
+          var view = window.innerHeight
+          var inner = $('.hs-in', hs)
+          if (inner) inner.style.height = view + 'px'
+          hs.style.height = view + dist() + 'px'
+        }
+        if (tr) {
+          gsap.set('#hs .prog i', { scaleX: 0 })
+          gsap.to(tr, {
+            x: function () {
+              return -dist()
+            },
+            ease: 'none',
+            scrollTrigger: {
+              trigger: hs,
+              start: 'top top',
+              end: 'bottom bottom',
+              scrub: true,
+              invalidateOnRefresh: true,
+              onUpdate: function (s) {
+                gsap.set('#hs .prog i', { scaleX: s.progress })
+              },
+            },
+          })
+        }
 
         var items = $$('#sync .sy'),
           pics = $$('#sync .sticky img')
@@ -3445,18 +3520,17 @@ form {
             },
           })
           gsap.from($$('.eyebrow,b,h3,p,a', it), {
-            y: 40,
-            opacity: 0,
-            stagger: 0.08,
-            duration: 0.8,
-            scrollTrigger: { trigger: it, start: 'top 80%' },
+            y: 16,
+            duration: 0.55,
+            scrollTrigger: { trigger: it, start: 'top 88%' },
           })
         })
 
         var r1 = $('#gr1'),
           r2 = $('#gr2'),
           gd = function (r) {
-            return Math.max(0, r.scrollWidth - window.innerWidth + 40)
+            var view = r.parentElement ? r.parentElement.clientWidth : window.innerWidth
+            return Math.max(0, r.scrollWidth - view)
           }
         gsap.fromTo(
           r1,
@@ -3495,27 +3569,28 @@ form {
           },
         )
 
-        gsap.fromTo(
-          '#adm',
-          { clipPath: 'inset(8% 5% 0% 5%)' },
-          {
-            clipPath: 'inset(0% 0% 0% 0%)',
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '#adm',
-              start: 'top 100%',
-              end: 'top 35%',
-              scrub: true,
-            },
-          },
-        )
         gsap.from('#adm .row>*', {
-          y: 40,
-          opacity: 0,
-          stagger: 0.15,
-          duration: 0.9,
-          scrollTrigger: { trigger: '#adm .row', start: 'top 90%' },
+          y: 16,
+          stagger: 0.08,
+          duration: 0.6,
+          scrollTrigger: { trigger: '#adm .row', start: 'top 92%' },
         })
+
+        function onRefreshInit() {
+          sizeStory()
+          sizeHs()
+        }
+        ScrollTrigger.addEventListener('refreshInit', onRefreshInit)
+        onRefreshInit()
+        return function () {
+          ScrollTrigger.removeEventListener('refreshInit', onRefreshInit)
+          if (story) story.style.height = ''
+          if (hs) {
+            hs.style.height = ''
+            var inner = $('.hs-in', hs)
+            if (inner) inner.style.height = ''
+          }
+        }
       })
 
       $$('#app img').forEach(function (i) {
