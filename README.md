@@ -5,8 +5,7 @@ Single-file site for **BGIC Institute** (Mahavir Enclave, New Delhi).
 ## Files
 
 - `index.html` — complete site (CSS + JS inlined)
-- Images load from the original site:  
-  `http://mahavir-enclave-coaching-classes.bgicinstitute.com/img/…`
+- `img/` — downloaded assets from the original website (required for Vercel/HTTPS)
 
 ## Run locally
 
@@ -18,6 +17,4 @@ Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 
 ## Deploy (Vercel)
 
-No build step — serve `index.html` as a static file.
-
-**Note:** The original image host only serves **HTTP**. On an HTTPS Vercel URL, some browsers block those images as mixed content. Prefer opening the site over HTTP locally, or use a host that allows the hotlinks.
+No build step — deploy `index.html` and the `img/` folder together.
