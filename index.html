@@ -813,6 +813,7 @@ ul {
 /* PINNED STORY */
 .story {
   position: relative;
+  z-index: 2;
   background: var(--navy);
   color: #e8ecf6;
   padding: clamp(2.5rem, 6vw, 4.5rem) 0;
@@ -861,24 +862,20 @@ ul {
   letter-spacing: 0.16em;
 }
 
-.gs-on .story {
-  padding: 0;
-}
-
-.gs-on .slist {
+.gs-on .stage {
   display: none;
 }
 
-.gs-on .stage {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  height: 100svh;
-  height: 100dvh;
-  gap: clamp(1.5rem, 5vw, 5rem);
-  align-items: center;
-  padding: calc(var(--hh) + 1.2rem) var(--pad) 2rem;
-  max-width: 1360px;
-  margin: 0 auto;
+@media (min-width: 860px) {
+  .slist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(1.5rem, 4vw, 3.5rem);
+  }
+
+  .slist > .eyebrow {
+    grid-column: 1 / -1;
+  }
 }
 
 .stage .txt {
@@ -982,6 +979,8 @@ ul {
 
 /* COURSE GALLERY */
 .hs {
+  position: relative;
+  z-index: 1;
   background: var(--mid);
   color: #fff;
   padding: clamp(2.5rem, 6vw, 4.5rem) 0 2rem;
@@ -1077,8 +1076,7 @@ ul {
 }
 
 .hs .prog {
-  margin: 0.8rem var(--pad) 0;
-  max-width: none;
+  display: none;
 }
 
 .hint {
@@ -1089,20 +1087,19 @@ ul {
 }
 
 .gs-on .hs {
-  height: 100svh;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: calc(var(--hh) + 0.6rem) 0 1.2rem;
+  height: auto;
+  display: block;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 2rem;
 }
 
 .gs-on .ht {
-  overflow: visible;
-  width: max-content;
-  padding-right: 10vw;
-  scroll-snap-type: none;
-  gap: 3vw;
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 100%;
+  padding-right: var(--pad);
+  scroll-snap-type: x mandatory;
+  gap: 1.2rem;
   align-items: flex-start;
 }
 
@@ -3424,63 +3421,6 @@ form {
           opacity: 0,
           duration: 0.6,
           scrollTrigger: { trigger: '#big', start: 'top 75%' },
-        })
-
-        var tls = $$('#stage .tl'),
-          tis = $$('#stage .ti'),
-          n = tls.length,
-          cols = ['#101C36', '#14295e', '#0e3a4a', '#2a1f4d'],
-          fade = 0.28,
-          step = 1,
-          total = (n - 1) * step
-        gsap.set(tls.slice(1), { autoAlpha: 0 })
-        gsap.set(tis.slice(1), { autoAlpha: 0 })
-        var T = gsap.timeline({
-          scrollTrigger: {
-            trigger: '#story',
-            start: 'top top',
-            end: '+=' + n * (M ? 50 : 62) + '%',
-            pin: true,
-            scrub: 0.45,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-          },
-          defaults: { ease: 'power1.inOut' },
-        })
-        T.to('#story .prog i', { scaleX: 1, ease: 'none', duration: total }, 0)
-        for (var i = 1; i < n; i++) {
-          var at = (i - 1) * step + (step - fade)
-          T.to(tls[i - 1], { autoAlpha: 0, duration: fade }, at)
-            .fromTo(tls[i], { autoAlpha: 0 }, { autoAlpha: 1, duration: fade }, at)
-            .fromTo(tis[i], { autoAlpha: 0 }, { autoAlpha: 1, duration: fade }, at)
-            .to(tis[i - 1], { autoAlpha: 0, duration: fade }, at)
-            .to('.story-bg', { backgroundColor: cols[i % cols.length], duration: fade }, at)
-        }
-
-        var tr = $('.ht'),
-          dist = function () {
-            return Math.max(0, tr.scrollWidth - window.innerWidth + (M ? 24 : 40))
-          }
-        gsap.set('#hs .prog i', { scaleX: 0 })
-        gsap.to(tr, {
-          x: function () {
-            return -dist()
-          },
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '#hs',
-            start: 'top top',
-            end: function () {
-              return '+=' + dist()
-            },
-            pin: true,
-            scrub: 0.8,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-            onUpdate: function (s) {
-              gsap.set('#hs .prog i', { scaleX: s.progress })
-            },
-          },
         })
 
         var items = $$('#sync .sy'),
