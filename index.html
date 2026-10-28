@@ -1,52 +1,3847 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>BGIC Institute — Coaching & Tuition, Mahavir Enclave, New Delhi</title>
-    <meta
-      name="description"
-      content="BGIC Institute, Mahavir Enclave, New Delhi: coaching and tuition up to Class 12 (CBSE & NIOS), computer courses, IGNOU BCA/MCA, spoken English and law coaching."
-    />
-    <meta name="theme-color" content="#0A1224" />
-    <meta property="og:title" content="BGIC Institute — Mahavir Enclave, New Delhi" />
-    <meta
-      property="og:description"
-      content="Students improve through tutoring. Coaching up to Class 12, NIOS, computer courses, IGNOU and more."
-    />
-    <meta property="og:image" content="/img/slider/2.jpg" />
-    <link rel="icon" href="/img/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="pl" role="status" aria-label="Loading BGIC Institute">
-      <div>
-        <canvas id="plc" width="200" height="200" aria-hidden="true"></canvas>
-        <div class="plw">BGIC <b>Institute</b></div>
-        <div class="pls">Mahavir Enclave · New Delhi</div>
-        <div class="plb"><i></i></div>
-        <div class="pln">0%</div>
-      </div>
-    </div>
-    <a class="skip" href="#main">Skip to content</a>
-    <div id="hdr-root"></div>
-    <main id="main" tabindex="-1"><div id="app"></div></main>
-    <div id="ftr-root"></div>
-    <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
-      <button class="x" aria-label="Close">✕</button>
-      <button class="pv" aria-label="Previous photo">←</button>
-      <img alt="" />
-      <button class="nx" aria-label="Next photo">→</button>
-    </div>
-    <button class="totop" id="totop" aria-label="Back to top">↑</button>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BGIC Institute — Coaching & Tuition, Mahavir Enclave, New Delhi</title>
+<meta name="description" content="BGIC Institute, Mahavir Enclave, New Delhi: coaching and tuition up to Class 12 (CBSE & NIOS), computer courses, IGNOU BCA/MCA, spoken English and law coaching.">
+<meta name="theme-color" content="#0A1224">
+<meta property="og:title" content="BGIC Institute — Mahavir Enclave, New Delhi">
+<meta property="og:description" content="Students improve through tutoring. Coaching up to Class 12, NIOS, computer courses, IGNOU and more.">
+<meta property="og:image" content="img/slider/2.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root {
+  --navy: #101c36;
+  --mid: #0a1224;
+  --blue: #315fea;
+  --ivory: #f8f6f0;
+  --slate: #68748a;
+  --amber: #e9b45b;
+  --ink: #16203a;
+  --line: rgba(16, 28, 54, 0.14);
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Manrope", system-ui, sans-serif;
+  --pad: clamp(1rem, 4.5vw, 4rem);
+  --xl: clamp(2.4rem, 8.5vw, 8.5rem);
+  --hh: 72px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  font: 400 1rem / 1.7 var(--sans);
+  color: var(--ink);
+  background: var(--ivory);
+  overflow-x: clip;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body.lock {
+  overflow: hidden;
+  touch-action: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.02;
+  margin: 0 0 0.5em;
+  letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: var(--xl);
+}
+
+h2 {
+  font-size: clamp(2rem, 6.5vw, 6rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.4vw, 2rem);
+  line-height: 1.12;
+}
+
+em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+}
+
+.wrap {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.sec {
+  padding: clamp(2.2rem, 6.5vw, 5.5rem) 0;
+}
+
+.dark {
+  background: var(--mid);
+  color: #e8ecf6;
+}
+
+.navy {
+  background: var(--navy);
+  color: #e8ecf6;
+}
+
+.blue {
+  background: var(--blue);
+  color: #fff;
+}
+
+.eyebrow {
+  font: 600 0.72rem / 1 var(--sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.dark .eyebrow,
+.navy .eyebrow {
+  color: var(--amber);
+}
+
+.blue .eyebrow {
+  color: var(--ivory);
+}
+
+.muted {
+  color: var(--slate);
+}
+
+.dark .muted,
+.navy .muted {
+  color: #a9b3c9;
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  background: #fff;
+  padding: 0.7rem 1rem;
+  z-index: 999;
+}
+
+.skip:focus {
+  left: 8px;
+  top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 52px;
+  min-width: 44px;
+  padding: 0.8rem 1.6rem;
+  border: 1.5px solid transparent;
+  font: 600 0.82rem var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+  text-align: center;
+  touch-action: manipulation;
+}
+
+.btn-p {
+  background: var(--amber);
+  color: var(--mid);
+}
+
+.btn-p:hover {
+  background: #fff;
+}
+
+.btn-g {
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #fff;
+  background: none;
+}
+
+.btn-g:hover {
+  background: #fff;
+  color: var(--mid);
+}
+
+.btn-o {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: none;
+}
+
+.btn-o:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.btn-b {
+  background: var(--blue);
+  color: #fff;
+}
+
+.btn-b:hover {
+  background: var(--navy);
+}
+
+.ln {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+.ln > span {
+  display: block;
+}
+
+/* PRELOADER */
+#pl {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--mid);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: plfb 0.01s linear 9s forwards;
+  padding: var(--pad);
+}
+
+@keyframes plfb {
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+#pl canvas {
+  width: min(200px, 42vw);
+  height: min(200px, 42vw);
+  margin: 0 auto -0.5rem;
+}
+
+.plw {
+  font: 400 clamp(2.4rem, 11vw, 6rem) / 1 var(--serif);
+  letter-spacing: 0.04em;
+}
+
+.plw b {
+  font-weight: 400;
+  font-style: italic;
+  color: var(--amber);
+}
+
+.pls {
+  font: 600 0.68rem var(--sans);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #a9b3c9;
+  margin: 0.8rem 0 1.8rem;
+}
+
+.plb {
+  width: min(300px, 70vw);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  margin: 0 auto 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.plb i {
+  position: absolute;
+  inset: 0;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.pln {
+  font: 400 1rem var(--serif);
+  color: var(--amber);
+}
+
+/* HEADER */
+.hdr {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  padding-top: env(safe-area-inset-top);
+  transition: background 0.3s;
+}
+
+.hdr.solid {
+  background: rgba(10, 18, 36, 0.96);
+  backdrop-filter: blur(10px);
+}
+
+.hdr .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--hh);
+  color: #fff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  font: 600 1.05rem var(--serif);
+  white-space: nowrap;
+}
+
+.brand img {
+  height: 36px;
+  width: auto;
+  background: #fff;
+  padding: 3px;
+}
+
+.brand small {
+  display: block;
+  font: 500 0.58rem var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.nav .l {
+  color: #fff;
+  text-decoration: none;
+  font: 500 0.76rem var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.6rem 0.7rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav .l::after {
+  content: "";
+  position: absolute;
+  left: 0.7rem;
+  right: 0.7rem;
+  bottom: 0.25rem;
+  height: 1px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.nav .l:hover::after,
+.nav .l.on::after,
+.dd:hover > .l::after,
+.dd:focus-within > .l::after {
+  transform: scaleX(1);
+}
+
+.dd {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 300px;
+  max-height: 75vh;
+  overflow-y: auto;
+  background: var(--mid);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.5rem;
+  display: none;
+}
+
+.dd:hover .menu,
+.dd:focus-within .menu,
+.dd.open .menu {
+  display: block;
+}
+
+.menu a {
+  display: block;
+  padding: 0.55rem 0.8rem;
+  color: #dfe6f6;
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menu h5 {
+  margin: 0.6rem 0.8rem 0.2rem;
+  font: 600 0.65rem var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  touch-action: manipulation;
+}
+
+.mob {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: var(--mid);
+  color: #fff;
+  padding: calc(env(safe-area-inset-top) + 1rem) var(--pad)
+    calc(env(safe-area-inset-bottom) + 1.5rem);
+  transform: translateX(100%);
+  visibility: hidden;
+  transition: transform 0.35s, visibility 0.35s;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mob.open {
+  transform: none;
+  visibility: visible;
+}
+
+.mob .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.mob .l {
+  display: block;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  font: 400 1.4rem var(--serif);
+  cursor: pointer;
+  list-style: none;
+  color: #fff;
+}
+
+.mob summary::-webkit-details-marker {
+  display: none;
+}
+
+.mob summary::after {
+  content: "+";
+  float: right;
+  color: var(--amber);
+}
+
+.mob details[open] summary::after {
+  content: "–";
+}
+
+.mob a.s {
+  display: block;
+  padding: 0.55rem 0 0.55rem 1rem;
+  color: #b9c4dc;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.mob .btn {
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 1180px) {
+  .nav {
+    display: none;
+  }
+
+  .burger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --hh: 64px;
+  }
+
+  .brand span {
+    font-size: 0.95rem;
+  }
+
+  .brand img {
+    height: 32px;
+  }
+}
+
+/* HERO */
+.hero {
+  background: var(--mid);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 25% 100%;
+  color: #fff;
+  min-height: min(100svh, 980px);
+  min-height: min(100dvh, 980px);
+  display: grid;
+  align-items: center;
+  padding: calc(var(--hh) + 2.5rem) 0 3.5rem;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 7.5vw, 7.4rem);
+  margin-bottom: 0.35em;
+}
+
+.hero .lead {
+  max-width: 44ch;
+  color: #b9c4dc;
+  font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+}
+
+.hero .cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1.8rem;
+}
+
+.hf {
+  position: relative;
+  margin-right: 18px;
+  margin-bottom: 18px;
+}
+
+.hf::before {
+  content: "";
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+  border: 1px solid var(--amber);
+}
+
+.hf .ph {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: linear-gradient(160deg, #1c2f63, var(--navy));
+  overflow: hidden;
+}
+
+.hf img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hp {
+  position: absolute;
+  left: -3.2rem;
+  bottom: 2.5rem;
+  background: var(--ivory);
+  color: var(--ink);
+  padding: 1.2rem 1.5rem;
+  max-width: 230px;
+  z-index: 2;
+  box-shadow: 0 24px 40px -20px #000;
+}
+
+.hp b {
+  display: block;
+  font: 400 2rem / 1 var(--serif);
+  margin-bottom: 0.4rem;
+}
+
+.hp span {
+  font-size: 0.8rem;
+  color: var(--slate);
+  line-height: 1.4;
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    padding: calc(var(--hh) + 1.5rem) 0 2.8rem;
+    align-items: start;
+    min-height: auto;
+  }
+
+  .hero .wrap {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero .btn {
+    flex: 1 1 100%;
+  }
+
+  .hf .ph {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hp {
+    left: 0.8rem;
+    bottom: -1.4rem;
+    max-width: min(200px, 55vw);
+    padding: 1rem 1.2rem;
+  }
+
+  .hf {
+    margin-right: 14px;
+    margin-bottom: 2.2rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero h1 {
+    font-size: clamp(2.1rem, 11vw, 2.8rem);
+  }
+
+  .hp {
+    max-width: min(170px, 58vw);
+    padding: 0.85rem 1rem;
+  }
+
+  .hp b {
+    font-size: 1.45rem;
+  }
+
+  .hp span {
+    font-size: 0.72rem;
+  }
+}
+
+/* ABOUT */
+.about .wrap {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  align-items: start;
+}
+
+.about .im {
+  grid-column: 1 / 7;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--navy), var(--blue));
+}
+
+.about .im img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about .tx {
+  grid-column: 7 / 13;
+  padding-top: clamp(0rem, 6vw, 5rem);
+}
+
+.about h2 {
+  margin-left: -18%;
+  position: relative;
+  z-index: 2;
+  color: var(--navy);
+}
+
+.about .tx p {
+  max-width: 46ch;
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.1rem;
+  margin-top: 1.4rem;
+  font-size: 0.85rem;
+  color: var(--slate);
+}
+
+@media (max-width: 860px) {
+  .about .im {
+    grid-column: 1 / -1;
+    aspect-ratio: 4 / 3;
+  }
+
+  .about .tx {
+    grid-column: 1 / -1;
+    padding-top: 0;
+  }
+
+  .about h2 {
+    margin-left: 0;
+  }
+}
+
+/* IMAGE REVEAL */
+.big {
+  position: relative;
+  height: clamp(280px, 72svh, 820px);
+  height: clamp(280px, 72dvh, 820px);
+  overflow: hidden;
+  background: var(--mid);
+}
+
+.big .fr {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.big img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  position: absolute;
+  top: -10%;
+}
+
+.big::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(10, 18, 36, 0.85), transparent 55%);
+}
+
+.big .cap {
+  position: absolute;
+  z-index: 2;
+  left: var(--pad);
+  right: var(--pad);
+  bottom: clamp(1.2rem, 5vw, 4rem);
+  color: #fff;
+  max-width: 900px;
+}
+
+.big .cap h2 {
+  font-size: clamp(1.8rem, 6vw, 5.5rem);
+  margin: 0;
+}
+
+/* PINNED STORY */
+.story {
+  background: var(--navy);
+  color: #e8ecf6;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+}
+
+.stage {
+  display: none;
+}
+
+.slist .it {
+  display: grid;
+  gap: 1rem;
+  padding: 1.6rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.slist .it .pi {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--blue);
+}
+
+.slist img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slist b {
+  color: var(--amber);
+  font: 600 0.75rem var(--sans);
+  letter-spacing: 0.16em;
+}
+
+.gs-on .story {
+  padding: 0;
+}
+
+.gs-on .slist {
+  display: none;
+}
+
+.gs-on .stage {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  height: 100svh;
+  height: 100dvh;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  align-items: center;
+  padding: calc(var(--hh) + 1.2rem) var(--pad) 2rem;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.stage .txt {
+  display: grid;
+}
+
+.stage .tl {
+  grid-area: 1 / 1;
+  align-self: center;
+}
+
+.stage .tl h2 {
+  font-size: clamp(2rem, 5vw, 4.6rem);
+}
+
+.stage .tl p {
+  max-width: 42ch;
+  color: #b9c4dc;
+}
+
+.stage .pics {
+  display: grid;
+  height: min(70svh, 640px);
+  height: min(70dvh, 640px);
+}
+
+.stage .ti {
+  grid-area: 1 / 1;
+  overflow: hidden;
+  background: var(--blue);
+}
+
+.stage .ti img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prog {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.18);
+  margin-top: 1.5rem;
+  max-width: 320px;
+}
+
+.prog i {
+  display: block;
+  height: 100%;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.cnt {
+  font: 400 1rem var(--serif);
+  color: var(--amber);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+@media (max-width: 899px) {
+  .gs-on .stage {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding-bottom: 1.2rem;
+  }
+
+  .stage .pics {
+    order: -1;
+    height: 36svh;
+    height: 36dvh;
+  }
+
+  .stage .tl {
+    align-self: start;
+  }
+
+  .stage .tl h2 {
+    font-size: clamp(1.7rem, 7.5vw, 2.6rem);
+    margin-bottom: 0.3em;
+  }
+
+  .stage .tl p {
+    font-size: 0.95rem;
+  }
+
+  .prog {
+    margin-top: 1rem;
+  }
+}
+
+/* COURSE GALLERY */
+.hs {
+  background: var(--mid);
+  color: #fff;
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 2rem;
+  overflow: hidden;
+}
+
+.hs .hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.hs h2 {
+  margin: 0;
+}
+
+.ht {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 var(--pad) 1.2rem;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+}
+
+.hpn {
+  flex: 0 0 min(80vw, 380px);
+  scroll-snap-align: start;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: #fff;
+}
+
+.hpn .pi {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: linear-gradient(160deg, var(--navy), var(--c, var(--blue)));
+  position: relative;
+}
+
+.hpn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s;
+}
+
+.hpn:hover img {
+  transform: scale(1.07);
+}
+
+.hpn .t {
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  background: var(--c, var(--amber));
+  color: var(--mid);
+  font: 600 0.66rem var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+}
+
+.hpn .n {
+  font: italic 400 0.95rem var(--serif);
+  color: var(--amber);
+}
+
+.hpn p {
+  color: #a9b3c9;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.hpn h3 {
+  margin: 0;
+}
+
+.hpn .go {
+  font: 600 0.75rem var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--amber);
+  align-self: flex-start;
+  padding-bottom: 0.2rem;
+}
+
+.hs .prog {
+  margin: 0.8rem var(--pad) 0;
+  max-width: none;
+}
+
+.hint {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a9b3c9;
+}
+
+.gs-on .hs {
+  height: 100svh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(var(--hh) + 0.6rem) 0 1.2rem;
+}
+
+.gs-on .ht {
+  overflow: visible;
+  width: max-content;
+  padding-right: 10vw;
+  scroll-snap-type: none;
+  gap: 3vw;
+  align-items: flex-start;
+}
+
+.gs-on .hpn {
+  flex-basis: 30vw;
+}
+
+.gs-on .hpn .pi {
+  aspect-ratio: 5 / 6;
+  max-height: 46svh;
+  max-height: 46dvh;
+}
+
+.gs-on .hpn:nth-child(3n + 2) {
+  flex-basis: 38vw;
+  margin-top: 3vh;
+}
+
+.gs-on .hpn:nth-child(3n + 2) .pi {
+  aspect-ratio: 4 / 3;
+}
+
+.gs-on .hpn:nth-child(3n) {
+  flex-basis: 24vw;
+}
+
+@media (max-width: 899px) {
+  .gs-on .hs .hd {
+    margin-bottom: 1rem;
+  }
+
+  .gs-on .hs h2 {
+    font-size: clamp(1.9rem, 9vw, 3rem);
+  }
+
+  .gs-on .ht {
+    gap: 5vw;
+  }
+
+  .gs-on .hpn,
+  .gs-on .hpn:nth-child(3n + 2),
+  .gs-on .hpn:nth-child(3n) {
+    flex-basis: 72vw;
+    margin-top: 0;
+  }
+
+  .gs-on .hpn .pi,
+  .gs-on .hpn:nth-child(3n + 2) .pi {
+    aspect-ratio: 4 / 5;
+    max-height: 40svh;
+    max-height: 40dvh;
+  }
+
+  .gs-on .hpn p {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .hpn {
+    flex-basis: min(86vw, 320px);
+  }
+
+  .gs-on .hpn,
+  .gs-on .hpn:nth-child(3n + 2),
+  .gs-on .hpn:nth-child(3n) {
+    flex-basis: 82vw;
+  }
+}
+
+/* SYNCED SCROLL */
+.sync .wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.sync .sticky {
+  display: none;
+}
+
+.sy {
+  padding: 1.6rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.sy .pi {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--navy);
+  margin-bottom: 1.2rem;
+}
+
+.sy img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sy h3 {
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+}
+
+.sy b {
+  font: 600 0.75rem var(--sans);
+  letter-spacing: 0.16em;
+  color: var(--blue);
+}
+
+.gs-on .sync .wrap {
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 6vw;
+}
+
+.gs-on .sync .sticky {
+  display: block;
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  height: 100dvh;
+  padding: calc(var(--hh) + 1rem) 0 2rem;
+  align-self: start;
+}
+
+.gs-on .sync .sticky .box {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.sync .sticky img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.8s, transform 1.2s;
+}
+
+.sync .sticky img.on {
+  opacity: 1;
+  transform: none;
+}
+
+.gs-on .sy {
+  min-height: 70svh;
+  min-height: 70dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 0;
+}
+
+.gs-on .sy .pi {
+  display: none;
+}
+
+.sync .prog {
+  background: var(--line);
+  margin-top: 0.8rem;
+}
+
+.sync .prog i {
+  background: var(--blue);
+}
+
+.sync .sticky .prog {
+  max-width: none;
+}
+
+@media (max-width: 899px) {
+  .gs-on .sync .wrap {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .gs-on .sync .sticky {
+    top: var(--hh);
+    height: 34svh;
+    height: 34dvh;
+    padding: 0.6rem 0;
+    z-index: 3;
+    background: var(--ivory);
+  }
+
+  .gs-on .sync .sticky .box {
+    height: calc(100% - 10px);
+  }
+
+  .gs-on .sy {
+    min-height: 56svh;
+    min-height: 56dvh;
+  }
+
+  .gs-on .sync .eyebrow {
+    margin-top: 1.2rem;
+  }
+}
+
+/* COMPUTER LANGUAGES */
+.cl .cll a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(0.7rem, 1.6vw, 1.2rem) 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  font: 400 clamp(1.4rem, 5vw, 4rem) / 1.05 var(--serif);
+  transition: padding 0.3s, color 0.3s;
+}
+
+.cl .cll a:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.cl .cll a:hover {
+  padding-left: 1rem;
+  color: var(--blue);
+}
+
+.cl .cll i {
+  font-style: normal;
+  color: var(--amber);
+}
+
+.cl h2 {
+  margin-bottom: 0.6rem;
+}
+
+/* GALLERY STRIP + PAGE */
+.gstrip {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+  overflow: hidden;
+}
+
+.gstrip .hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.gstrip h2 {
+  margin: 0;
+}
+
+.gr {
+  display: flex;
+  gap: 0.8rem;
+  overflow-x: auto;
+  padding: 0 var(--pad) 0.8rem;
+  margin-bottom: 0.4rem;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+.gs-on .gr {
+  overflow: visible;
+  width: max-content;
+}
+
+.gt {
+  flex: 0 0 clamp(160px, 26vw, 340px);
+  aspect-ratio: 4 / 3;
+  border: 0;
+  padding: 0;
+  background: var(--navy);
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+  touch-action: manipulation;
+}
+
+.gt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+
+.gt:hover img {
+  transform: scale(1.07);
+}
+
+.gal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 0.8rem;
+}
+
+.gal .gt {
+  flex: none;
+  width: 100%;
+}
+
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: rgba(10, 18, 36, 0.96);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 3.5rem 1rem;
+}
+
+.lb.open {
+  display: flex;
+}
+
+.lb img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.lb button {
+  position: absolute;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  touch-action: manipulation;
+}
+
+.lb .x {
+  top: calc(0.8rem + env(safe-area-inset-top));
+  right: 1rem;
+}
+
+.lb .pv {
+  left: 0.6rem;
+  top: 50%;
+}
+
+.lb .nx {
+  right: 0.6rem;
+  top: 50%;
+}
+
+@media (max-width: 560px) {
+  .lb {
+    padding: 4.5rem 0.6rem 1.2rem;
+  }
+
+  .lb .pv,
+  .lb .nx {
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    top: auto;
+    width: 52px;
+    height: 52px;
+  }
+
+  .lb .pv {
+    left: 1rem;
+  }
+
+  .lb .nx {
+    right: 1rem;
+  }
+}
+
+/* TESTIMONIALS / LISTINGS */
+.qs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+  margin: 1.5rem 0 1rem;
+}
+
+.q {
+  border-top: 2px solid var(--ink);
+  padding-top: 1.2rem;
+}
+
+.q blockquote {
+  margin: 0 0 1rem;
+  font: 400 clamp(1.15rem, 2.2vw, 1.9rem) / 1.2 var(--serif);
+}
+
+.q blockquote::before {
+  content: "“";
+  display: block;
+  font-size: 3.5rem;
+  line-height: 0.6;
+  color: var(--amber);
+}
+
+.q cite {
+  font: 600 0.75rem var(--sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--slate);
+  font-style: normal;
+}
+
+.ls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.ls a {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 1rem;
+  text-decoration: none;
+  text-align: center;
+  font: 600 0.8rem var(--sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+}
+
+.ls a:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.ls img {
+  max-height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 860px) {
+  .qs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ADMISSIONS */
+.adm {
+  padding: clamp(3rem, 9vw, 7rem) 0;
+}
+
+.adm h2 {
+  font-size: clamp(2.2rem, 9vw, 9rem);
+  max-width: 12ch;
+}
+
+.adm .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  align-items: end;
+}
+
+.adm ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1.05rem;
+}
+
+.adm li {
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.adm .btn-p {
+  background: #fff;
+  color: var(--mid);
+}
+
+.adm .btn-p:hover {
+  background: var(--amber);
+}
+
+@media (max-width: 760px) {
+  .adm .row {
+    grid-template-columns: 1fr;
+  }
+
+  .adm .btn {
+    width: 100%;
+  }
+}
+
+/* INNER PAGES */
+.ph-hd {
+  background: var(--mid);
+  color: #fff;
+  padding: calc(var(--hh) + 3rem) 0 2.5rem;
+}
+
+.ph-hd h1 {
+  font-size: clamp(2rem, 7vw, 6rem);
+  max-width: 18ch;
+}
+
+.ph-hd p {
+  max-width: 56ch;
+  color: #b9c4dc;
+  margin: 0;
+}
+
+.crumb {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a9b3c9;
+  margin-bottom: 1.2rem;
+}
+
+.crumb a {
+  text-decoration: none;
+}
+
+.crumb a:hover {
+  color: var(--amber);
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.2rem, 5vw, 5rem);
+  align-items: center;
+  padding: clamp(1.2rem, 3vw, 2.2rem) 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.row2:nth-child(even) .pi {
+  order: 2;
+}
+
+.row2 .pi {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.row2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s;
+}
+
+.row2:hover img {
+  transform: scale(1.05);
+}
+
+.more {
+  font: 600 0.75rem var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--blue);
+  padding-bottom: 0.2rem;
+}
+
+.two {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(1.5rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 1.4rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.pills li {
+  font-size: 0.82rem;
+  border: 1px solid var(--line);
+  padding: 0.25rem 0.75rem;
+  background: #fff;
+}
+
+.note {
+  border-left: 3px solid var(--amber);
+  background: #fff8e8;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.92rem;
+  color: #5b4a22;
+  margin: 1.2rem 0;
+}
+
+.cimg {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--navy);
+  margin-bottom: 1.3rem;
+}
+
+.cimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kids {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.kid {
+  text-decoration: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.kid .pi {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.kid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+
+.kid:hover img {
+  transform: scale(1.06);
+}
+
+.kid div.b {
+  padding: 0.9rem 1rem;
+}
+
+.kid b {
+  display: block;
+  font: 400 1.2rem / 1.15 var(--serif);
+}
+
+.kid span {
+  font-size: 0.78rem;
+  color: var(--slate);
+}
+
+.side {
+  position: sticky;
+  top: calc(var(--hh) + 1rem);
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.f label {
+  display: block;
+  font: 600 0.8rem var(--sans);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.35rem;
+}
+
+.f input,
+.f select,
+.f textarea {
+  width: 100%;
+  min-height: 50px;
+  padding: 0.75rem 0.9rem;
+  font: 400 16px / 1.4 var(--sans);
+  border: 1.5px solid #c3cbdb;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 0;
+}
+
+.f textarea {
+  min-height: 110px;
+}
+
+.f input:focus,
+.f select:focus,
+.f textarea:focus {
+  border-color: var(--blue);
+  outline: 3px solid rgba(49, 95, 234, 0.25);
+}
+
+.f .err {
+  color: #b3261e;
+  font-size: 0.82rem;
+  min-height: 1.1em;
+}
+
+.f [aria-invalid="true"] {
+  border-color: #b3261e;
+}
+
+.chk {
+  display: flex;
+  gap: 0.7rem;
+  font-size: 0.88rem;
+  align-items: flex-start;
+}
+
+.chk input {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  margin-top: 0.15rem;
+}
+
+.status {
+  padding: 1rem;
+  background: #e8f0ff;
+  font-size: 0.93rem;
+}
+
+/* FOOTER */
+.ftr {
+  background: var(--mid);
+  color: #b9c4dc;
+  padding: 3.5rem 0 calc(2rem + env(safe-area-inset-bottom));
+  font-size: 0.92rem;
+}
+
+.fg {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
+  gap: 2rem;
+}
+
+.ftr h4 {
+  color: #fff;
+  font: 600 0.72rem var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 0.8rem;
+}
+
+.ftr a {
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.ftr a:hover {
+  color: var(--amber);
+}
+
+.ftr .lg {
+  font: 400 clamp(2rem, 5vw, 3.4rem) / 1 var(--serif);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.copy {
+  margin-top: 2.5rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  justify-content: space-between;
+}
+
+.totop {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: calc(1rem + env(safe-area-inset-bottom));
+  width: 48px;
+  height: 48px;
+  border: 0;
+  background: var(--amber);
+  color: var(--mid);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 40;
+  touch-action: manipulation;
+}
+
+.totop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (max-width: 1100px) {
+  .fg {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .two,
+  .row2 {
+    grid-template-columns: 1fr;
+  }
+
+  .row2:nth-child(even) .pi {
+    order: 0;
+  }
+
+  .side {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .fg {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fg > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .panel {
+    padding: 1.1rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .fg {
+    grid-template-columns: 1fr;
+  }
+
+  :root {
+    --pad: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+</style>
+</head>
+<body>
+<div id="pl" role="status" aria-label="Loading BGIC Institute"><div><canvas id="plc" width="200" height="200" aria-hidden="true"></canvas><div class="plw">BGIC <b>Institute</b></div><div class="pls">Mahavir Enclave · New Delhi</div><div class="plb"><i></i></div><div class="pln">0%</div></div></div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="hdr-root"></div>
+<main id="main" tabindex="-1"><div id="app"></div></main>
+<div id="ftr-root"></div>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer"><button class="x" aria-label="Close">✕</button><button class="pv" aria-label="Previous photo">←</button><img alt=""><button class="nx" aria-label="Next photo">→</button></div>
+<button class="totop" id="totop" aria-label="Back to top">↑</button>
+<script>
+;(function () {
+  'use strict'
+
+  /* Local images — served from /public/img so HTTPS deploys (Vercel) never hit mixed-content blocks */
+  var SRC = 'img/'
+  var C = {
+    phones: [
+      { t: '8285-83-2596', h: '+918285832596' },
+      { t: '8285-83-2597', h: '+918285832597' },
+      { t: '075039 60432', h: '+917503960432' },
+    ],
+    emails: ['bgicinstitute@gmail.com', 'bgicedu@gmail.com'],
+    addr: 'RZ-D9, First floor, Gali no. 7, Palam–Dabri Marg, Mahavir Enclave Part 1, Near Dwarka Sector-1, New Delhi, Delhi 110045',
+    addr2: 'B 22 A, near Gurudwara Rd, Block RZ, Mahavir Enclave Part 1, New Delhi, Delhi 110045',
+    social: [
+      ['Instagram', 'https://www.instagram.com/bgicinstitute/'],
+      ['X / Twitter', 'https://twitter.com/bgicinstitute'],
+      ['LinkedIn', 'https://in.linkedin.com/in/bgic-institute-912a0479'],
+      ['Facebook', 'https://www.facebook.com/public/Bgic-Edu'],
+      ['Blog', 'http://bgicinstitute.blogspot.in/'],
+    ],
+    others: [
+      ['CBSE', 'http://cbse.nic.in/'],
+      ['IGNOU', 'http://www.ignou.ac.in/'],
+      ['NIOS', 'http://www.nos.org/'],
+      ['MeritNation', 'http://www.meritnation.com/'],
+    ],
+    listings: [
+      [
+        'JustDial',
+        'http://www.justdial.com/Delhi/BGIC-INSTITUTE-%3Cnear%3E-Near-Gurudwara-Mahavir-Enclave/011PXX11-XX11-140828134527-D1Z1_BZDET',
+        'Just-Dial-verified-justdial-bgic_institute-8285832597-www.bgicinstitute.com.png',
+      ],
+      [
+        'UrbanPro',
+        'https://www.urbanpro.com/delhi/bgic-institute-mahavir-enclave/2470112',
+        'urbanpro_share-bgic_institute-8285832597-www.bgicinstitute.com.jpg',
+      ],
+      [
+        'TuitionGuru',
+        'http://tuitionguru.com/institute/bgic-institute/tg126101',
+        'tuitionguru_share-bgic_institute-8285832597-www.bgicinstitute.com.jpg',
+      ],
+      [
+        'TargetStudy',
+        'https://targetstudy.com/coaching/34550/bgic-institute',
+        'targetstudy-bgic_institute-8285832597-www.bgicinstitute.com.png',
+      ],
+      [
+        'IndiaMART',
+        'http://www.indiamart.com/bgic-institute/',
+        'indiamart-bgic_institute-8285832597-www.bgicinstitute.com.jpg',
+      ],
+      ['ThinkVidya', 'http://www.thinkvidya.com/delhi/bgic-mahavir-enclave/2470112', ''],
+    ],
+  }
+  var NOFEE = 'Fee not published on the original website — please enquire.'
+  var CONF = ' (as shown on the original website — please confirm the current fee)'
+  var TMPL =
+    'The original website shows “$20 per month”, which looks like template text — please confirm the fee with the institute.'
+  var COURSES = {}
+  var HOME = [
+    'school-tuition',
+    'science',
+    'commerce',
+    'arts',
+    'nios',
+    'computer-courses',
+    'computer-coaching',
+    'spoken-english',
+    'law',
+  ]
+
+  function add(o) {
+    o.kids = o.kids || []
+    o.groups = o.groups || []
+    o.body = o.body || []
+    o.cat = o.cat || 'School'
+    o.c = o.c || '#6f8cf0'
+    o.fee = o.fee || NOFEE
+    COURSES[o.slug] = o
+  }
+
+  var SUB19 = ['Maths', 'Science', 'Social Studies (SST)', 'English', 'Hindi']
+  var SUB18 = [
+    'Maths',
+    'Science',
+    'Social Studies (SST)',
+    'English',
+    'Hindi',
+    'Sanskrit',
+    'EVS',
+    'General Knowledge (GK)',
+  ]
+
+  add({
+    slug: 'school-tuition',
+    title: 'CBSE Tuition, Classes 1–10',
+    level: 'Classes 1 to 10',
+    img: 'course-cbse-coaching-10-class-tuitions-bgic_institute.jpg',
+    short: 'Tuition in every core subject from Class 1 to Class 10.',
+    body: [
+      'Coaching and tuition for school students from Class 1 onwards, with a separate batch for each class from 1–5, 6, 7, 8, 9 and 10.',
+    ],
+    groups: [
+      ['Classes 1–8', SUB18],
+      ['Classes 9–10', SUB19],
+      ['Classes 9–12', ['Computer Science']],
+    ],
+    fee: 'Fees are listed class by class — open a class below.',
+    kids: ['class-1-5', 'class-6', 'class-7', 'class-8', 'class-9', 'class-10'],
+  })
+  add({
+    slug: 'class-1-5',
+    title: 'Coaching, Classes 1 to 5',
+    level: 'Classes 1–5',
+    img: 'course-cbse-coaching-1st-till-10th-bgic-institute.jpg',
+    short: 'Coaching from Class 1 to 5 in Mahavir Enclave.',
+    body: ['Coaching and tuition from Class 1 to Class 5. Admissions open.'],
+    groups: [['Subjects (Classes 1–8)', SUB18]],
+    fee: 'As per class, per 1 month (amount not stated).',
+  })
+  add({
+    slug: 'class-6',
+    title: 'Coaching for Class 6',
+    level: 'Class 6',
+    img: 'course-cbse-coaching-class-6-th-bgic_institute-mahavir_enclave.jpg',
+    short: 'Coaching for Class 6.',
+    body: ['Coaching and tuition for Class 6. Admissions open.'],
+    groups: [['Subjects', SUB18]],
+    fee: 'Rs 1700/- per month' + CONF + '.',
+  })
+  add({
+    slug: 'class-7',
+    title: 'Coaching for Class 7',
+    level: 'Class 7',
+    img: 'course-cbse-coaching-7-class-tuitions-bgic_institute.jpg',
+    short: 'Coaching for Class 7.',
+    body: ['Coaching and tuition for Class 7. Admissions open.'],
+    groups: [['Subjects', SUB18]],
+    fee: 'Rs 1750/- per month' + CONF + '.',
+  })
+  add({
+    slug: 'class-8',
+    title: 'Coaching for Class 8',
+    level: 'Class 8',
+    img: 'course-cbse-coaching-8-th-tuition-institute-bgic_institute.jpg',
+    short: 'Coaching for Class 8.',
+    body: ['Coaching and tuition for Class 8. Admissions open.'],
+    groups: [['Subjects', SUB18]],
+    fee: 'Rs 1800/- per month' + CONF + '.',
+  })
+  add({
+    slug: 'class-9',
+    title: 'Coaching for Class 9',
+    level: 'Class 9',
+    img: 'course-cbse-coaching-9-class-tuitions-bgic_institute.jpg',
+    short: 'Subject-wise coaching for Class 9.',
+    body: ['Coaching and tuition for Class 9, subject by subject. Admissions open.'],
+    groups: [['Subjects', SUB19.concat(['Computer Science'])]],
+    fee: 'As per subject, per month (amount not stated).',
+  })
+  add({
+    slug: 'class-10',
+    title: 'Coaching for Class 10',
+    level: 'Class 10',
+    img: 'course-cbse-coaching-10-class-tuitions-bgic_institute.jpg',
+    short: 'Subject-wise coaching for Class 10.',
+    body: ['Coaching and tuition for Class 10, subject by subject. Admissions open.'],
+    groups: [['Subjects', SUB19.concat(['Computer Science'])]],
+    fee: 'As per subject, per month (amount not stated).',
+  })
+
+  function sr(slug, t, cat, c, i11, i12, short, subs, extra) {
+    add({
+      slug: slug,
+      cat: 'Senior',
+      c: c,
+      title: t + ', Classes 11 & 12',
+      level: 'CBSE Classes 11–12',
+      img: i12,
+      short: short,
+      body: [
+        'Coaching and tuition for ' +
+          t +
+          ' students of Class 11 and Class 12 (all subjects / all streams).',
+      ].concat(extra || []),
+      groups: [
+        ['Class 11 subjects', subs],
+        ['Class 12 subjects', subs],
+      ],
+      fee: 'As per subject, per 1 month (amount not stated).',
+      img11: i11,
+    })
+  }
+  sr(
+    'science',
+    'Science',
+    'Senior',
+    '#2a9d8f',
+    'course-cbse-coaching-11th-and-science-bgic_institute.jpg',
+    'course-cbse-coaching-12th-science-bgic_institute.jpg',
+    'Physics, Chemistry, Biology, Computer Science, Maths and English.',
+    ['Physics', 'Chemistry', 'Biology', 'Computer Science (C++)', 'Maths', 'English', 'Hindi'],
+  )
+  sr(
+    'commerce',
+    'Commerce',
+    'Senior',
+    '#E9B45B',
+    'course-cbse-coaching-11th-commerce-coaching-bgic_institute.jpg',
+    'course-cbse-coaching-12th-commerce-coaching-bgic_institute.jpg',
+    'Accounts, Economics, Business Studies, Informatics Practices and Maths.',
+    [
+      'Accounts',
+      'Economics',
+      'Business Studies',
+      'Informatics Practices (IP) / C++',
+      'Maths',
+      'English',
+      'Hindi',
+    ],
+    [
+      'Coaching is also listed for Entrepreneurship and Legal Studies in Classes 11 and 12.',
+    ],
+  )
+  sr(
+    'arts',
+    'Arts / Humanities',
+    'Senior',
+    '#e0788b',
+    'course-cbse-coaching-11th-art-coaching-bgic_institute.jpeg',
+    'course-cbse-coaching-11th-art-coaching-bgic_institute.jpeg',
+    'Political Science, Economics, History, Geography, Sociology and English.',
+    [
+      'Political Science',
+      'Economics',
+      'History',
+      'Geography',
+      'Sociology',
+      'English',
+      'Hindi',
+      'Maths',
+    ],
+  )
+
+  var NN = 'nios-admissions-open--in-mahavir_enclave-new-delhi-bgic_institute.jpg'
+  var NNOTE =
+    'The original site carries dated NIOS admission notices (2016, 2017 and 2023–24). Treat them as past notices and confirm the current admission cycle with the institute.'
+  add({
+    slug: 'nios',
+    cat: 'NIOS',
+    c: '#a58cf0',
+    title: 'NIOS Coaching, Classes 10 & 12',
+    level: 'NIOS Class 10 and 12',
+    img: NN,
+    short:
+      'Specialised coaching for NIOS Class 10 and Class 12 — Science, Commerce and Arts.',
+    body: [
+      'Specialised coaching for NIOS 10th and 12th students in all subjects and streams, including Arts, Commerce and Science. NIOS online admissions are listed.',
+    ],
+    fee: 'Contact the institute for fees.',
+    note: NNOTE,
+    kids: ['nios-10', 'nios-12-science', 'nios-12-commerce', 'nios-12-arts'],
+  })
+  ;[
+    [
+      'nios-10',
+      'NIOS Class 10',
+      'course-cbse-coaching-10-class-tuitions-bgic_institute.jpg',
+      'Coaching and tuition classes for NIOS 10 std — all subjects.',
+    ],
+    [
+      'nios-12-science',
+      'NIOS Class 12 Science',
+      NN,
+      'Coaching and tuition classes for NIOS 12 std Science — all subjects, all streams.',
+    ],
+    [
+      'nios-12-commerce',
+      'NIOS Class 12 Commerce',
+      NN,
+      'Coaching and tuition for NIOS 12 std Commerce — all subjects, all streams.',
+    ],
+    [
+      'nios-12-arts',
+      'NIOS Class 12 Arts',
+      NN,
+      'Coaching and tuition classes for NIOS 12 std Arts — all subjects, all streams.',
+    ],
+  ].forEach(function (n) {
+    add({
+      slug: n[0],
+      cat: 'NIOS',
+      c: '#a58cf0',
+      title: n[1] + ' Coaching',
+      level: n[1],
+      img: n[2],
+      short: n[3],
+      body: [n[3]],
+      fee: 'Contact the institute for fees.',
+      note: NNOTE,
+    })
+  })
+
+  var LANG = [
+    ['c', 'C Language', 'c-course-in-mahavir_enclave-bgic_institute.jpg'],
+    ['cpp', 'C++ Language', 'C-C-course-in-mahavir_enclave-bgic_institute.jpg'],
+    [
+      'vb-net',
+      'VB .NET',
+      'asp.net-sql-language-course-in-mahavir_enclave-new-delhi-bgic_institute.jpg',
+    ],
+    [
+      'java',
+      'Java',
+      'java-language-course-in-mahavir_enclave-new-delhi-bgic_institute.jpg',
+    ],
+    ['php', 'PHP', 'php-computer_basic-course-in-mahavir_enclave-bgic_institute.jpg'],
+    [
+      'html',
+      'HTML',
+      'web-design-c-course-in-mahavir_enclave-new-delhi-bgic_institute.jpg',
+    ],
+    [
+      'dtp',
+      'DTP',
+      'DTP-language-course-in-mahavir_enclave-new-delhi-bgic_institute.jpg',
+    ],
+    [
+      'ds',
+      'DS (Data Structures)',
+      'datastructure-dbms-computer_basic-course-in-mahavir_enclave-bgic_institute.jpg',
+    ],
+    ['sql', 'SQL', 'sql-language-course-in-mahavir_enclave-new-delhi-bgic_institute.jpg'],
+    [
+      'web-design',
+      'Web Design',
+      'web-design-c-course-in-mahavir_enclave-new-delhi-bgic_institute.jpg',
+    ],
+    ['dbms', 'DBMS', 'dbms-computer_basic-course-in-mahavir_enclave-bgic_institute.jpg'],
+    ['rdbms', 'RDBMS', 'net-course-in-mahavir_enclave-bgic_institute.jpg'],
+  ]
+  add({
+    slug: 'computer-courses',
+    cat: 'Computer',
+    c: '#4cb3e6',
+    title: 'Computer Courses',
+    level: 'Basic to programming',
+    img: 'slider/4.jpg',
+    short: 'Programming languages, DTP, databases, web design and a basic computer course.',
+    body: [
+      'The institute states that an excellent computer lab is available, and describes its training as practical — “with why” — rather than theory alone.',
+      'Language courses: C, C++, VB.NET, Java, PHP and HTML. Further courses: DTP, DS, SQL, Web Design, DBMS and RDBMS.',
+    ],
+    groups: [['Also listed', ['Tally', 'Basic computer course']]],
+    fee: 'Fees are listed per course — open a course below.',
+    kids: LANG.map(function (l) {
+      return l[0]
+    }).concat(['computer-basic']),
+  })
+  LANG.forEach(function (l) {
+    add({
+      slug: l[0],
+      cat: 'Computer',
+      c: '#4cb3e6',
+      title: l[1],
+      level: 'Computer course',
+      img: l[2],
+      short: l[1] + ' coaching at BGIC Institute.',
+      body: [
+        l[1] +
+          ' is offered as part of the institute’s computer courses, taught in its computer lab. Admissions open.',
+      ],
+      fee: l[0] === 'c' ? 'Rs 1000 per month' + CONF + '.' : TMPL,
+    })
+  })
+  add({
+    slug: 'computer-basic',
+    cat: 'Computer',
+    c: '#4cb3e6',
+    title: 'Basic Computer Course',
+    level: 'Foundation',
+    img: 'course-1.jpg',
+    short: 'A basic computer course in Mahavir Enclave.',
+    body: [
+      'A basic computer course at the institute, with computer lab facility. Admissions open.',
+    ],
+  })
+
+  add({
+    slug: 'computer-coaching',
+    cat: 'Computer',
+    c: '#52b788',
+    title: 'Computer Coaching: IGNOU, B.Tech & M.Tech',
+    level: 'Degree-level coaching',
+    img: 'bca-ignou-coaching-classes-in-mahavir_enclave-bgic_institute.jpg',
+    short: 'Semester-wise IGNOU BCA and MCA coaching with project preparation.',
+    body: [
+      'Coaching for IGNOU BCA and MCA covering Semesters 1 to 6, plus project preparation.',
+      'The site menu also lists B.Tech (IT), B.Tech (CSE) and M.Tech coaching.',
+    ],
+    fee: 'Fee information is not published — please enquire.',
+    kids: ['ignou-bca', 'ignou-mca', 'btech-it', 'btech-cse', 'mtech'],
+  })
+  ;[
+    [
+      'ignou-bca',
+      'IGNOU BCA Coaching',
+      'bca-ignou-coaching-classes-in-mahavir_enclave-bgic_institute.jpg',
+      ['BCA — Semesters 1 to 6', 'Project preparation'],
+    ],
+    ['ignou-mca', 'IGNOU MCA Coaching', 'slider/3.jpg', ['MCA — Semesters 1 to 6', 'Project preparation']],
+    ['btech-it', 'B.Tech (IT) Coaching', 'slider/4.jpg', []],
+    ['btech-cse', 'B.Tech (CSE) Coaching', 'slider/4.jpg', []],
+    ['mtech', 'M.Tech Coaching', 'slider/3.jpg', []],
+  ].forEach(function (n) {
+    add({
+      slug: n[0],
+      cat: 'Computer',
+      c: '#52b788',
+      title: n[1],
+      level: 'Degree-level coaching',
+      img: n[2],
+      short: n[1] + ' at BGIC Institute.',
+      body: [
+        n[1] +
+          (n[3].length
+            ? ' for IGNOU students, semester by semester.'
+            : ' is listed in the institute’s course menu; the original page carries only placeholder text, so no further details can be shown.'),
+      ],
+      groups: n[3].length ? [['Covers', n[3]]] : [],
+    })
+  })
+
+  add({
+    slug: 'spoken-english',
+    cat: 'Skills',
+    c: '#f08a5d',
+    title: 'Spoken English & Personality Development',
+    level: 'Confidence-building',
+    img: 'slider/2.jpg',
+    short: 'English speaking classes and a personality development course.',
+    body: [
+      'English speaking classes are offered so as to build confidence in oneself. A Personality Development course is offered with the same aim.',
+    ],
+    groups: [['Programmes', ['Spoken English (English Basic)', 'Personality Development']]],
+  })
+  add({
+    slug: 'law',
+    cat: 'Skills',
+    c: '#d9b44a',
+    title: 'Law Coaching (LLB & Entrance)',
+    level: 'Entrance and LLB semesters',
+    img: 'slider/3.jpg',
+    short: 'Coaching for law entrance exams such as CLAT, and for LLB semesters.',
+    body: [
+      'Coaching for LLB (Law) entrance exams such as CLAT, and for LLB Semesters 1 to 6 with project preparation. Crash courses for all subjects and streams are also listed.',
+    ],
+    groups: [
+      [
+        'Programmes',
+        ['LLB entrance (CLAT, etc.)', 'LLB — Sem. 1–6', 'Project preparation', 'Crash courses'],
+      ],
+    ],
+  })
+
+  Object.keys(COURSES).forEach(function (k) {
+    COURSES[k].kids.forEach(function (s) {
+      if (COURSES[s]) COURSES[s].parent = k
+    })
+  })
+
+  var MENU = [
+    [
+      'Courses',
+      [
+        ['', 'school-tuition'],
+        ['', 'science'],
+        ['', 'commerce'],
+        ['', 'arts'],
+        ['', 'nios-10'],
+        ['', 'nios-12-science'],
+        ['', 'nios-12-commerce'],
+        ['', 'nios-12-arts'],
+        ['', 'spoken-english'],
+        ['', 'computer-basic'],
+        ['', 'law'],
+      ],
+    ],
+    [
+      'Computer Courses',
+      [
+        ['Language courses', 'c'],
+        ['', 'cpp'],
+        ['', 'vb-net'],
+        ['', 'java'],
+        ['', 'php'],
+        ['', 'html'],
+        ['Other courses', 'dtp'],
+        ['', 'ds'],
+        ['', 'sql'],
+        ['', 'web-design'],
+        ['', 'dbms'],
+        ['', 'rdbms'],
+      ],
+    ],
+    [
+      'Computer Coaching',
+      [
+        ['', 'ignou-bca'],
+        ['', 'ignou-mca'],
+        ['', 'btech-it'],
+        ['', 'btech-cse'],
+        ['', 'mtech'],
+      ],
+    ],
+  ]
+
+  var TEACH = [
+    [
+      'Tuition classes',
+      'C, C++, Java, DTP, Tally, CBSE tuition and NIOS tuition — and more.',
+      'slider/2.jpg',
+    ],
+    [
+      'The best tutor',
+      'Expert, result-oriented faculty dedicated to bringing out the best in every student.',
+      'slider/3.jpg',
+    ],
+    [
+      'Practical training',
+      'Training with “why” — practical learning rather than only theory.',
+      'slider/4.jpg',
+    ],
+    [
+      'Support',
+      'All-round individual support to enhance capabilities, practical or theoretical.',
+      'course-cbse-coaching-10-class-tuitions-bgic_institute.jpg',
+    ],
+  ]
+  var WHO = [
+    [
+      'School, Classes 1–10',
+      'school-tuition',
+      'Maths, Science, SST, English, Hindi — and Sanskrit, EVS and GK in the lower classes.',
+    ],
+    [
+      'Senior secondary, 11–12',
+      'commerce',
+      'Science, Commerce and Arts, with subject-wise coaching charged per subject per month.',
+    ],
+    [
+      'NIOS, Classes 10 & 12',
+      'nios',
+      'Specialised coaching in all subjects and streams for NIOS students.',
+    ],
+    [
+      'Computers & degrees',
+      'computer-courses',
+      'From basic computer courses and programming to IGNOU BCA/MCA coaching.',
+    ],
+  ]
+  var QUOTES = [
+    ['Best Commerce Institute in Mahavir Enclave', 'Ex. Student · Commerce Department'],
+    [
+      'Best Coaching Institute and English Speaking Institute in Mahavir Enclave',
+      'Ex. Student · HR Department',
+    ],
+    ['Best Computer Basic Course in Mahavir Enclave', 'Ex. Student · Software Department'],
+  ]
+  var GAL = []
+  ;['jpg', 'jpg', 'jpg', 'jpg', 'jpg', 'JPG', 'jpg', 'JPG', 'jpg', 'jpg', 'jpg', 'jpg', 'jpg', 'png', 'jpg', 'gif'].forEach(
+    function (e, i) {
+      GAL.push({
+        s: 'gallery/img-small' + (i + 1) + '.' + e,
+        l: 'gallery/img-large' + (i + 1) + '.' + e,
+      })
+    },
+  )
+
+  /* ===== UTILS ===== */
+  var esc = function (s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]
+    })
+  }
+  var $ = function (s, r) {
+    return (r || document).querySelector(s)
+  }
+  var $$ = function (s, r) {
+    return Array.prototype.slice.call((r || document).querySelectorAll(s))
+  }
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+  function img(f, alt, eager) {
+    var src = f.indexOf('http') === 0 || f.charAt(0) === '/' ? f : SRC + f
+    return (
+      '<img src="' +
+      esc(src) +
+      '" alt="' +
+      esc(alt) +
+      '"' +
+      (eager ? ' fetchpriority="high"' : ' loading="lazy"') +
+      ' decoding="async" onerror="this.onerror=null;this.style.opacity=\'0.15\'">'
+    )
+  }
+  function pills(a) {
+    return (
+      '<ul class="pills">' +
+      a
+        .map(function (x) {
+          return '<li>' + esc(x) + '</li>'
+        })
+        .join('') +
+      '</ul>'
+    )
+  }
+  function dir() {
+    return (
+      'https://www.google.com/maps/search/?api=1&query=' +
+      encodeURIComponent('BGIC Institute, ' + C.addr)
+    )
+  }
+  function split(t) {
+    return t
+      .split('|')
+      .map(function (l) {
+        return '<span class="ln"><span>' + esc(l) + '</span></span>'
+      })
+      .join('')
+  }
+  function tile(i) {
+    return (
+      '<button class="gt" data-lb="' +
+      i +
+      '" aria-label="Open photo ' +
+      (i + 1) +
+      '">' +
+      img(GAL[i].s, 'BGIC Institute gallery photo ' + (i + 1)) +
+      '</button>'
+    )
+  }
+
+  /* ===== SHARED UI ===== */
+  function headerHTML() {
+    var dd = MENU.map(function (m) {
+      return (
+        '<div class="dd"><button class="l" aria-haspopup="true" aria-expanded="false" data-r="' +
+        m[0] +
+        '">' +
+        m[0] +
+        ' ▾</button><div class="menu">' +
+        m[1]
+          .map(function (x) {
+            return (
+              (x[0] ? '<h5>' + x[0] + '</h5>' : '') +
+              '<a href="#/courses/' +
+              x[1] +
+              '">' +
+              esc(COURSES[x[1]].title) +
+              '</a>'
+            )
+          })
+          .join('') +
+        '</div></div>'
+      )
+    }).join('')
+    var mob = MENU.map(function (m) {
+      return (
+        '<details><summary class="l">' +
+        m[0] +
+        '</summary>' +
+        m[1]
+          .map(function (x) {
+            return (
+              '<a class="s" href="#/courses/' +
+              x[1] +
+              '">' +
+              esc(COURSES[x[1]].title) +
+              '</a>'
+            )
+          })
+          .join('') +
+        '</details>'
+      )
+    }).join('')
+    return (
+      '<header class="hdr" id="hdr"><div class="wrap"><a class="brand" href="#/home" aria-label="BGIC Institute home">' +
+      img('logo.png', 'BGIC Institute logo', 1) +
+      '<span>BGIC Institute<small>Mahavir Enclave</small></span></a>' +
+      '<nav class="nav" aria-label="Primary"><a class="l" data-r="home" href="#/home">Home</a>' +
+      dd +
+      '<a class="l" data-r="gallery" href="#/gallery">Gallery</a><a class="l" data-r="contact" href="#/contact">Contact</a><a class="btn btn-p" style="min-height:44px;padding:.5rem 1.2rem;margin-left:.6rem" href="#/admissions">Enquire</a></nav>' +
+      '<button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mob">☰</button></div></header>' +
+      '<div class="mob" id="mob" role="dialog" aria-modal="true" aria-label="Menu"><div class="top"><span class="brand">BGIC Institute</span><button class="burger" id="mclose" aria-label="Close menu">✕</button></div><a class="l" href="#/home">Home</a><a class="l" href="#/about">About</a>' +
+      mob +
+      '<a class="l" href="#/gallery">Gallery</a><a class="l" href="#/admissions">Admissions</a><a class="l" href="#/contact">Contact</a><a class="btn btn-p" href="#/admissions">Enquire now</a></div>'
+    )
+  }
+
+  function footerHTML() {
+    return (
+      '<footer class="ftr"><div class="wrap"><div class="fg"><div><div class="lg">BGIC<br>Institute</div><p style="max-width:34ch">An educational group providing coaching and tuition up to Class 12, at Mahavir Enclave, New Delhi.</p></div>' +
+      '<div><h4>Courses</h4>' +
+      HOME.slice(0, 5)
+        .map(function (s) {
+          return '<a href="#/courses/' + s + '">' + esc(COURSES[s].title) + '</a>'
+        })
+        .join('') +
+      '<a href="#/courses">All programmes</a></div>' +
+      '<div><h4>Computers</h4><a href="#/courses/computer-courses">Computer Courses</a><a href="#/courses/computer-coaching">IGNOU / B.Tech / M.Tech</a><a href="#/courses/spoken-english">Spoken English</a><a href="#/courses/law">Law Coaching</a></div>' +
+      '<div><h4>Institute</h4><a href="#/about">About</a><a href="#/teaching">Teaching</a><a href="#/gallery">Gallery</a><a href="#/admissions">Admissions</a><a href="#/contact">Contact</a>' +
+      C.social
+        .map(function (s) {
+          return (
+            '<a href="' +
+            s[1] +
+            '" target="_blank" rel="noopener">' +
+            esc(s[0]) +
+            ' ↗</a>'
+          )
+        })
+        .join('') +
+      '</div>' +
+      '<div><h4>Visit &amp; call</h4><p>' +
+      esc(C.addr) +
+      '</p><a href="' +
+      dir() +
+      '" target="_blank" rel="noopener">Directions ↗</a>' +
+      C.phones
+        .map(function (p) {
+          return '<a href="tel:' + p.h + '">' + p.t + '</a>'
+        })
+        .join('') +
+      C.emails
+        .map(function (e) {
+          return '<a href="mailto:' + e + '">' + e + '</a>'
+        })
+        .join('') +
+      '</div></div>' +
+      '<div class="copy"><span>© BGIC Institute. All rights reserved.</span><span>Useful: ' +
+      C.others
+        .map(function (o) {
+          return (
+            '<a style="display:inline;margin-left:.6rem" href="' +
+            o[1] +
+            '" target="_blank" rel="noopener">' +
+            o[0] +
+            '</a>'
+          )
+        })
+        .join('') +
+      '</span></div></div></footer>'
+    )
+  }
+
+  function pageHd(crumb, title, lead) {
+    return (
+      '<section class="ph-hd"><div class="wrap"><div class="crumb"><a href="#/home">Home</a> / ' +
+      crumb +
+      '</div><h1 data-ttl>' +
+      esc(title) +
+      '</h1>' +
+      (lead ? '<p>' + esc(lead) + '</p>' : '') +
+      '</div></section>'
+    )
+  }
+
+  function formHTML(pre) {
+    var o =
+      '<option value="">Select a programme</option>' +
+      Object.keys(COURSES)
+        .map(function (s) {
+          return (
+            '<option value="' +
+            s +
+            '"' +
+            (s === pre ? ' selected' : '') +
+            '>' +
+            esc(COURSES[s].title) +
+            '</option>'
+          )
+        })
+        .join('')
+    return (
+      '<form id="enq" novalidate><div class="f"><label for="n">Student / parent name *</label><input id="n" autocomplete="name"><div class="err" id="e-n" aria-live="polite"></div></div><div class="f"><label for="p">Phone number *</label><input id="p" type="tel" inputmode="tel" autocomplete="tel"><div class="err" id="e-p" aria-live="polite"></div></div><div class="f"><label for="m">Email (optional)</label><input id="m" type="email" autocomplete="email"><div class="err" id="e-m" aria-live="polite"></div></div><div class="f"><label for="c">Programme / class *</label><select id="c">' +
+      o +
+      '</select><div class="err" id="e-c" aria-live="polite"></div></div><div class="f"><label for="g">Message</label><textarea id="g"></textarea></div><label class="chk"><input type="checkbox" id="k"><span>I agree that the institute may use these details to respond to my enquiry. *</span></label><div class="f"><div class="err" id="e-k"></div></div><button class="btn btn-b" type="submit">Prepare enquiry email</button><p class="muted small" style="margin:0">This site has no server. Submitting opens your email app with a message addressed to ' +
+      esc(C.emails[0]) +
+      '; nothing is sent until you press send there. You can also call ' +
+      esc(C.phones[0].t) +
+      '.</p><div id="fs" role="status"></div></form>'
+    )
+  }
+
+  /* ===== VIEWS ===== */
+  var V = {}
+  V.home = function () {
+    var panels = HOME.map(function (s, i) {
+      var c = COURSES[s]
+      return (
+        '<a class="hpn" style="--c:' +
+        c.c +
+        '" href="#/courses/' +
+        s +
+        '"><div class="pi">' +
+        img(c.img, c.title + ' at BGIC Institute') +
+        '<span class="t">' +
+        esc(c.cat) +
+        '</span></div><span class="n">' +
+        ('0' + (i + 1)).slice(-2) +
+        ' — ' +
+        esc(c.level) +
+        '</span><h3>' +
+        esc(c.title) +
+        '</h3><p>' +
+        esc(c.short) +
+        '</p><span class="go">Details →</span></a>'
+      )
+    }).join('')
+    var slist = TEACH.map(function (t, i) {
+      return (
+        '<div class="it"><div class="pi">' +
+        img(t[2], t[0]) +
+        '</div><div><b>0' +
+        (i + 1) +
+        '</b><h3>' +
+        esc(t[0]) +
+        '</h3><p class="muted">' +
+        esc(t[1]) +
+        '</p></div></div>'
+      )
+    }).join('')
+    var tls = TEACH.map(function (t, i) {
+      return (
+        '<div class="tl"><span class="cnt">0' +
+        (i + 1) +
+        ' / 0' +
+        TEACH.length +
+        '</span><h2>' +
+        esc(t[0]) +
+        '</h2><p>' +
+        esc(t[1]) +
+        '</p></div>'
+      )
+    }).join('')
+    var tis = TEACH.map(function (t) {
+      return '<div class="ti">' + img(t[2], t[0]) + '</div>'
+    }).join('')
+    var sy = WHO.map(function (w, i) {
+      return (
+        '<div class="sy"><div class="pi">' +
+        img(COURSES[w[1]].img, w[0]) +
+        '</div><b>0' +
+        (i + 1) +
+        '</b><h3>' +
+        esc(w[0]) +
+        '</h3><p class="muted" style="max-width:40ch">' +
+        esc(w[2]) +
+        '</p><a class="btn btn-o" style="align-self:flex-start" href="#/courses/' +
+        w[1] +
+        '">View programme</a></div>'
+      )
+    }).join('')
+    var syi = WHO.map(function (w) {
+      return img(COURSES[w[1]].img, w[0])
+    }).join('')
+    var langs = LANG.slice(0, 6)
+      .map(function (l) {
+        return (
+          '<a data-alt href="#/courses/' +
+          l[0] +
+          '"><span>' +
+          esc(l[1]) +
+          '</span><i>→</i></a>'
+        )
+      })
+      .join('')
+    var g1 = '',
+      g2 = ''
+    for (var i = 0; i < 16; i++) {
+      if (i < 8) g1 += tile(i)
+      else g2 += tile(i)
+    }
+    return (
+      '<section class="hero" id="hero"><div class="wrap"><div><span class="eyebrow" style="color:var(--amber)">Mahavir Enclave · New Delhi</span><h1>Students <em>improve</em> through tutoring.</h1><p class="lead">Coaching and tuition up to Class 12 across Arts, Commerce and Science — plus NIOS, computer courses, IGNOU BCA/MCA, spoken English and law coaching.</p><div class="cta"><a class="btn btn-p" href="#/courses">Explore programmes</a><a class="btn btn-g" href="#/admissions">Enquire about admissions</a></div></div>' +
+      '<div class="hf"><div class="ph">' +
+      img('slider/2.jpg', 'Students learning at BGIC Institute', 1) +
+      '</div><div class="hp"><b>Classes 1–12</b><span>CBSE &amp; NIOS coaching, with a computer lab on site.</span></div></div></div></section>' +
+      '<section class="sec about" id="about"><div class="wrap"><div class="im">' +
+      img('slider/3.jpg', 'Coaching at BGIC Institute') +
+      '</div><div class="tx"><span class="eyebrow" data-a>01 — About</span><h2>' +
+      split('An institute|for every|stream.') +
+      '</h2><p data-a>BGIC Institute is an educational group that provides coaching and tuition classes up to Class 12 — all subjects and all streams, including Arts, Commerce and Science.</p><p data-a>Computer Science is taught for Classes 9–12 in an excellent computer lab, NIOS students receive specialised coaching, and English speaking classes help build confidence — all “at reasonable cost with excellent infrastructure and well qualified experienced faculty”, in the institute’s words.</p><div class="facts" data-a><span>Mahavir Enclave, New Delhi</span><span>CBSE &amp; NIOS</span><span>Arts · Commerce · Science</span></div><a class="btn btn-o" data-a href="#/about" style="margin-top:1.3rem">Read more</a></div></div></section>' +
+      '<section class="big" id="big"><div class="fr">' +
+      img('slider/4.jpg', 'Learning environment at BGIC Institute') +
+      '</div><div class="cap"><span class="eyebrow" style="color:var(--amber)">Computer lab</span><h2>Practical training, with <em>why</em>.</h2></div></section>' +
+      '<section class="story" id="story"><div class="slist wrap"><span class="eyebrow">Teaching approach</span>' +
+      slist +
+      '</div><div class="stage" id="stage"><div><span class="eyebrow">Teaching approach</span><div class="txt">' +
+      tls +
+      '</div><div class="prog"><i></i></div></div><div class="pics">' +
+      tis +
+      '</div></div></section>' +
+      '<section class="hs" id="hs"><div class="hd wrap"><div><span class="eyebrow" style="color:var(--amber)">Programmes</span><h2>The <em>courses</em>.</h2></div><span class="hint">Scroll to explore →</span></div><div class="ht">' +
+      panels +
+      '</div><div class="prog"><i></i></div></section>' +
+      '<section class="sec sync" id="sync"><div class="wrap"><div class="sticky"><div class="box">' +
+      syi +
+      '</div><div class="prog"><i></i></div></div><div><span class="eyebrow">Who we teach</span>' +
+      sy +
+      '</div></div></section>' +
+      '<section class="sec cl"><div class="wrap"><span class="eyebrow">Computer courses</span><h2 data-ttl>Learn to <em style="color:var(--blue)">code</em>.</h2><div class="cll">' +
+      langs +
+      '<a data-alt href="#/courses/computer-courses"><span>All computer courses</span><i>→</i></a></div></div></section>' +
+      '<section class="gstrip dark" id="gal"><div class="hd wrap"><div><span class="eyebrow">Gallery</span><h2>Inside the <em>institute</em>.</h2></div><a class="btn btn-g" href="#/gallery">View all photos</a></div><div class="gr" id="gr1">' +
+      g1 +
+      '</div><div class="gr" id="gr2">' +
+      g2 +
+      '</div></section>' +
+      '<section class="sec"><div class="wrap"><span class="eyebrow">What our students say</span><div class="qs">' +
+      QUOTES.map(function (q) {
+        return (
+          '<div class="q" data-up><blockquote>' +
+          esc(q[0]) +
+          '</blockquote><cite>' +
+          esc(q[1]) +
+          '</cite></div>'
+        )
+      }).join('') +
+      '</div><p class="muted small">Headings as shown on the institute’s website, which publishes no longer testimonial text.</p></div></section>' +
+      '<section class="sec" style="padding-top:0"><div class="wrap" data-up><span class="eyebrow">Find us on</span><div class="ls">' +
+      C.listings
+        .map(function (l) {
+          return (
+            '<a href="' +
+            l[1] +
+            '" target="_blank" rel="noopener">' +
+            (l[2] ? img(l[2], '') : '') +
+            '<span>' +
+            esc(l[0]) +
+            ' ↗</span></a>'
+          )
+        })
+        .join('') +
+      '</div></div></section>' +
+      '<section class="adm blue" id="adm"><div class="wrap"><span class="eyebrow">Admissions</span><h2 data-ttl>Ask about the next batch.</h2><div class="row"><ul><li>Classes 6–8: monthly fees are listed on the class pages.</li><li>Classes 9–12: fee is per subject, per month.</li><li>NIOS: contact the institute for fees.</li></ul><div><p>Call <a href="tel:' +
+      C.phones[0].h +
+      '">' +
+      C.phones[0].t +
+      '</a> or send an enquiry.</p><a class="btn btn-p" href="#/admissions">Enquire about admissions</a></div></div></div></section>'
+    )
+  }
+
+  V.about = function () {
+    return (
+      pageHd(
+        'About',
+        'About BGIC Institute',
+        'An educational group providing coaching and tuition up to Class 12, based in Mahavir Enclave, New Delhi.',
+      ) +
+      '<section class="sec"><div class="wrap two"><div data-up><p>BGIC Institute is an educational group that provides coaching and tuition for students up to Class 12 — all subjects and all streams, including Arts, Commerce and Science.</p><p>Computer Science is taught for Classes 9–12 with an excellent computer lab. NIOS Class 10 and 12 students receive specialised coaching, and the institute offers computer language courses (PHP, HTML, .NET, Java, C, C++ and more), English speaking classes and a personality development course.</p><p>Further programmes include IGNOU BCA/MCA coaching, law entrance and LLB coaching, crash courses, and Entrepreneurship and Legal Studies for Classes 11–12.</p><div class="note">The source website publishes no founding date, student numbers, results, faculty names, testimonial text or videos, so none are shown here.</div><a class="btn btn-o" href="#/courses">See all programmes</a></div><div class="cimg" data-clip>' +
+      img('slider/4.jpg', 'BGIC Institute') +
+      '</div></div></section>' +
+      '<section class="sec" style="padding-top:0"><div class="wrap" data-up><span class="eyebrow">Find us on</span><div class="ls">' +
+      C.listings
+        .map(function (l) {
+          return (
+            '<a href="' +
+            l[1] +
+            '" target="_blank" rel="noopener">' +
+            (l[2] ? img(l[2], '') : '') +
+            '<span>' +
+            esc(l[0]) +
+            ' ↗</span></a>'
+          )
+        })
+        .join('') +
+      '</div></div></section>'
+    )
+  }
+
+  V.courses = function () {
+    return (
+      pageHd('Courses', 'Courses & programmes', 'Every programme listed on the institute’s website.') +
+      '<section class="sec" style="padding-top:1.5rem"><div class="wrap">' +
+      HOME.map(function (s, i) {
+        var c = COURSES[s]
+        return (
+          '<a class="row2" href="#/courses/' +
+          s +
+          '"><div class="pi" data-clip>' +
+          img(c.img, c.title) +
+          '</div><div data-alt><span class="eyebrow">' +
+          ('0' + (i + 1)).slice(-2) +
+          ' — ' +
+          esc(c.cat) +
+          '</span><h3>' +
+          esc(c.title) +
+          '</h3><p class="muted">' +
+          esc(c.short) +
+          '</p><span class="more">View programme</span></div></a>'
+        )
+      }).join('') +
+      '</div></section>'
+    )
+  }
+
+  V.course = function (slug) {
+    var c = COURSES[slug]
+    if (!c) return V.nf()
+    var par = c.parent && COURSES[c.parent]
+    var kids = c.kids.length
+      ? '<h3 style="margin-top:1.8rem">' +
+        (c.slug === 'nios'
+          ? 'Programmes'
+          : c.slug === 'school-tuition'
+            ? 'Choose a class'
+            : 'Explore') +
+        '</h3><div class="kids">' +
+        c.kids
+          .map(function (k) {
+            var d = COURSES[k]
+            return (
+              '<a class="kid" data-up href="#/courses/' +
+              k +
+              '"><div class="pi">' +
+              img(d.img, d.title) +
+              '</div><div class="b"><b>' +
+              esc(d.title) +
+              '</b><span>' +
+              esc(d.level) +
+              '</span></div></a>'
+            )
+          })
+          .join('') +
+        '</div>'
+      : ''
+    var sib = par
+      ? '<h3 style="margin-top:1.8rem">More in ' +
+        esc(par.title) +
+        '</h3>' +
+        pills(
+          par.kids
+            .filter(function (k) {
+              return k !== slug
+            })
+            .map(function (k) {
+              return COURSES[k].title
+            }),
+        ).replace(/<li>([^<]*)<\/li>/g, function (m, t) {
+          var k = par.kids.filter(function (x) {
+            return esc(COURSES[x].title) === t
+          })[0]
+          return '<li><a style="text-decoration:none" href="#/courses/' + k + '">' + t + '</a></li>'
+        })
+      : ''
+    return (
+      pageHd(
+        (par
+          ? '<a href="#/courses/' + par.slug + '">' + esc(par.title) + '</a>'
+          : '<a href="#/courses">Courses</a>') +
+          ' / ' +
+          esc(c.cat),
+        c.title,
+        c.short,
+      ) +
+      '<section class="sec" style="padding-top:2rem"><div class="wrap two"><div><div class="cimg" data-clip>' +
+      img(c.img, c.title) +
+      '</div><div data-up>' +
+      c.body
+        .map(function (p) {
+          return '<p>' + esc(p) + '</p>'
+        })
+        .join('') +
+      c.groups
+        .map(function (g) {
+          return '<h3 style="margin-top:1.4rem">' + esc(g[0]) + '</h3>' + pills(g[1])
+        })
+        .join('') +
+      (c.note ? '<div class="note">' + esc(c.note) + '</div>' : '') +
+      '</div>' +
+      kids +
+      sib +
+      '</div>' +
+      '<aside class="panel side" data-up><h3>' +
+      esc(c.level) +
+      '</h3><p class="muted">' +
+      esc(c.fee) +
+      '</p><a class="btn btn-b" style="width:100%" href="#/admissions?c=' +
+      c.slug +
+      '">Enquire about this</a><p style="margin:1rem 0 0"><a href="tel:' +
+      C.phones[0].h +
+      '">Call ' +
+      C.phones[0].t +
+      '</a></p></aside></div></section>'
+    )
+  }
+
+  V.gallery = function () {
+    return (
+      pageHd(
+        'Gallery',
+        'Photo gallery',
+        'Photographs from the institute’s gallery page. Tap a photo to enlarge.',
+      ) +
+      '<section class="sec" style="padding-top:1.5rem"><div class="wrap"><div class="gal">' +
+      GAL.map(function (g, i) {
+        return tile(i)
+      }).join('') +
+      '</div></div></section>'
+    )
+  }
+
+  V.teaching = function () {
+    return (
+      pageHd(
+        'Teaching',
+        'Teaching approach',
+        'Faculty are described on the source website only in general terms; no individual profiles are published.',
+      ) +
+      '<section class="sec" style="padding-top:1.5rem"><div class="wrap">' +
+      TEACH.map(function (t, i) {
+        return (
+          '<div class="row2"><div class="pi" data-clip>' +
+          img(t[2], t[0]) +
+          '</div><div data-alt><span class="eyebrow">0' +
+          (i + 1) +
+          '</span><h3>' +
+          esc(t[0]) +
+          '</h3><p class="muted">' +
+          esc(t[1]) +
+          '</p></div></div>'
+        )
+      }).join('') +
+      '<div class="note">The institute describes its faculty as well qualified and experienced. Names, photographs and credentials are not published, so none are shown.</div></div></section>'
+    )
+  }
+
+  V.admissions = function () {
+    var pre = (/c=([\w-]+)/.exec(location.hash.split('?')[1] || '') || [])[1] || ''
+    return (
+      pageHd(
+        'Admissions',
+        'Admissions & fees',
+        'Admissions are handled by direct enquiry with the institute.',
+      ) +
+      '<section class="sec" style="padding-top:1.5rem"><div class="wrap two"><div data-up><h3>Fees as published</h3><ul><li>Class 6: Rs 1700 per month · Class 7: Rs 1750 per month · Class 8: Rs 1800 per month.</li><li>Classes 1–5: as per class, per month (amount not stated).</li><li>Classes 9–12: as per subject, per month (amount not stated).</li><li>C language: Rs 1000 per month. Other computer courses: the original shows “$20”, which looks like template text.</li><li>NIOS: contact the institute.</li></ul><p class="muted small">These figures come from the original website and its date is unknown — please confirm current fees by phone.</p><p><b>Call:</b> ' +
+      C.phones
+        .map(function (p) {
+          return '<a href="tel:' + p.h + '">' + p.t + '</a>'
+        })
+        .join(' · ') +
+      '<br><b>Email:</b> ' +
+      C.emails
+        .map(function (e) {
+          return '<a href="mailto:' + e + '">' + e + '</a>'
+        })
+        .join(' · ') +
+      '</p></div><div class="panel" data-up><h3>Enquiry form</h3>' +
+      formHTML(pre) +
+      '</div></div></section>'
+    )
+  }
+
+  V.contact = function () {
+    return (
+      pageHd(
+        'Contact',
+        'Contact the institute',
+        'Phone, email and address as published on the institute’s website.',
+      ) +
+      '<section class="sec" style="padding-top:1.5rem"><div class="wrap two"><div data-up><div class="panel" style="margin-bottom:1.2rem"><h3>Address</h3><p>' +
+      esc(C.addr) +
+      '</p><p class="muted small">The home page lists a second address: ' +
+      esc(C.addr2) +
+      '. Please confirm by phone before visiting.</p><a class="btn btn-o" href="' +
+      dir() +
+      '" target="_blank" rel="noopener">Directions ↗</a></div><div class="panel"><h3>Phone &amp; email</h3><p>' +
+      C.phones
+        .map(function (p) {
+          return '<a href="tel:' + p.h + '">' + p.t + '</a>'
+        })
+        .join('<br>') +
+      '</p><p>' +
+      C.emails
+        .map(function (e) {
+          return '<a href="mailto:' + e + '">' + e + '</a>'
+        })
+        .join('<br>') +
+      '</p></div></div><div class="panel" data-up><h3>Send an enquiry</h3>' +
+      formHTML('') +
+      '</div></div><p class="muted small" style="margin-top:1.5rem">Areas named on the institute’s site (Vijay Enclave, Palam, Dabri, Dashrathpuri, Nasirpur, Dwarka and wider Delhi) are advertised service areas, not separate branches.</p></section>'
+    )
+  }
+
+  V.nf = function () {
+    return (
+      pageHd('Not found', 'Page not found', 'That page doesn’t exist.') +
+      '<section class="sec"><div class="wrap"><a class="btn btn-o" href="#/home">Back to home</a></div></section>'
+    )
+  }
+
+  /* ===== ROUTER ===== */
+  var mm = null,
+    rt = 0,
+    TT = {
+      home: '',
+      about: 'About',
+      courses: 'Courses',
+      teaching: 'Teaching',
+      admissions: 'Admissions',
+      contact: 'Contact',
+      gallery: 'Gallery',
+    }
+
+  function teardown() {
+    if (mm) {
+      mm.revert()
+      mm = null
+    }
+    if (window.ScrollTrigger) ScrollTrigger.getAll().forEach(function (t) {
+      t.kill()
+    })
+    document.documentElement.classList.remove('gs-on')
+  }
+
+  function route() {
+    teardown()
+    var p = (location.hash || '#/home').replace(/^#\/?/, '').split('?')[0].replace(/\/$/, '') || 'home',
+      s = p.split('/'),
+      h,
+      t
+    if (s[0] === 'courses' && s[1]) {
+      h = V.course(s[1])
+      t = COURSES[s[1]] ? COURSES[s[1]].title : 'Not found'
+    } else if (TT[p] !== undefined) {
+      h = V[p]()
+      t = TT[p]
+    } else {
+      h = V.nf()
+      t = 'Not found'
+    }
+    $('#app').innerHTML = h
+    document.title = t
+      ? t + ' — BGIC Institute, Mahavir Enclave'
+      : 'BGIC Institute — Coaching & Tuition, Mahavir Enclave, New Delhi'
+    $$('.nav [data-r]').forEach(function (a) {
+      var on = a.dataset.r === s[0]
+      if (s[0] === 'courses' && s[1] && COURSES[s[1]]) {
+        var root = COURSES[s[1]].parent || s[1]
+        on = MENU.some(function (m) {
+          return (
+            m[0] === a.dataset.r &&
+            m[1].some(function (x) {
+              return (
+                x[1] === s[1] ||
+                x[1] === root ||
+                (COURSES[root] && COURSES[root].kids.indexOf(x[1]) > -1)
+              )
+            })
+          )
+        })
+      }
+      a.classList.toggle('on', on)
+    })
+    closeMenu()
+    window.scrollTo(0, 0)
+    setupForm()
+    hdrState()
+    requestAnimationFrame(function () {
+      animate(p)
+    })
+  }
+
+  function closeMenu() {
+    var m = $('#mob')
+    if (m) {
+      m.classList.remove('open')
+      document.body.classList.remove('lock')
+      var b = $('#burger')
+      if (b) b.setAttribute('aria-expanded', 'false')
+    }
+  }
+
+  function hdrState() {
+    var h = $('#hdr')
+    if (!h) return
+    var home = location.hash === '' || location.hash === '#/home' || location.hash === '#'
+    h.classList.toggle('solid', window.scrollY > 40 || !home)
+    $('#totop').classList.toggle('show', window.scrollY > 700)
+  }
+
+  /* ===== LIGHTBOX ===== */
+  var lbi = 0
+  function lbShow(i) {
+    lbi = (i + GAL.length) % GAL.length
+    var im = $('#lb img')
+    im.src = SRC + GAL[lbi].l
+    im.alt = 'BGIC Institute gallery photo ' + (lbi + 1)
+  }
+  function lbOpen(i) {
+    lbShow(i)
+    $('#lb').classList.add('open')
+    document.body.classList.add('lock')
+    $('#lb .x').focus()
+  }
+  function lbClose() {
+    $('#lb').classList.remove('open')
+    document.body.classList.remove('lock')
+  }
+
+  /* ===== SCROLL ANIMATION — same effects phone → desktop ===== */
+  function animate(p) {
+    if (!window.gsap || !window.ScrollTrigger || reduce) return
+    try {
+      gsap.registerPlugin(ScrollTrigger)
+      ScrollTrigger.config({ ignoreMobileResize: true })
+      if (p === 'home') document.documentElement.classList.add('gs-on')
+      mm = gsap.matchMedia()
+      mm.add({ isM: '(max-width: 899px)', isD: '(min-width: 900px)' }, function (ctx) {
+        var M = ctx.conditions.isM
+        $$('[data-clip]').forEach(function (el) {
+          var im = $('img', el)
+          gsap.fromTo(
+            el,
+            { clipPath: 'inset(0 100% 0 0)' },
+            {
+              clipPath: 'inset(0 0% 0 0)',
+              duration: 1.3,
+              ease: 'power3.inOut',
+              scrollTrigger: { trigger: el, start: 'top 88%' },
+            },
+          )
+          if (im)
+            gsap.from(im, {
+              scale: 1.3,
+              duration: 1.8,
+              ease: 'power3.out',
+              scrollTrigger: { trigger: el, start: 'top 88%' },
+            })
+        })
+        $$('[data-up]').forEach(function (el) {
+          gsap.from(el, {
+            y: M ? 36 : 50,
+            opacity: 0,
+            duration: 0.9,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: el, start: 'top 90%' },
+          })
+        })
+        $$('[data-alt]').forEach(function (el, i) {
+          gsap.from(el, {
+            x: (i % 2 ? 70 : -70) * (M ? 0.45 : 1),
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 90%' },
+          })
+        })
+        $$('[data-ttl]').forEach(function (el) {
+          gsap.from(el, {
+            y: M ? 40 : 60,
+            opacity: 0,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: { trigger: el, start: 'top 92%' },
+          })
+        })
+        gsap.from('.ftr .fg>div', {
+          y: 40,
+          opacity: 0,
+          stagger: 0.1,
+          duration: 0.8,
+          scrollTrigger: { trigger: '.ftr', start: 'top 94%' },
+        })
+        if (p === 'gallery') {
+          gsap.set('.gal .gt', { opacity: 0, y: 50 })
+          ScrollTrigger.batch('.gal .gt', {
+            start: 'top 94%',
+            once: true,
+            onEnter: function (b) {
+              gsap.to(b, {
+                opacity: 1,
+                y: 0,
+                stagger: 0.07,
+                duration: 0.7,
+                ease: 'power2.out',
+              })
+            },
+          })
+        }
+        if (p !== 'home') return
+
+        var tl = gsap.timeline({
+          scrollTrigger: { trigger: '#about', start: 'top 72%' },
+          defaults: { ease: 'power3.out' },
+        })
+        tl.fromTo(
+          '#about .im',
+          { clipPath: 'inset(0 100% 0 0)' },
+          { clipPath: 'inset(0 0% 0 0)', duration: 1.3, ease: 'power3.inOut' },
+          0,
+        )
+          .from('#about .im img', { scale: 1.35, duration: 1.8 }, 0)
+          .from('#about .eyebrow', { opacity: 0, x: -20, duration: 0.6 }, 0.3)
+          .from('#about h2 .ln>span', { yPercent: 110, duration: 1, stagger: 0.12 }, 0.4)
+          .from(
+            '#about [data-a]:not(.eyebrow)',
+            { y: 30, opacity: 0, duration: 0.8, stagger: 0.12 },
+            0.9,
+          )
+
+        gsap.fromTo(
+          '#big .fr',
+          { clipPath: 'inset(14% 12% 14% 12%)' },
+          {
+            clipPath: 'inset(0% 0% 0% 0%)',
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '#big',
+              start: 'top 90%',
+              end: 'top 15%',
+              scrub: true,
+            },
+          },
+        )
+        gsap.fromTo(
+          '#big img',
+          { yPercent: -6, scale: 1.15 },
+          {
+            yPercent: 6,
+            scale: 1,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '#big',
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: true,
+            },
+          },
+        )
+        gsap.from('#big .cap', {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: { trigger: '#big', start: 'top 45%' },
+        })
+
+        var tls = $$('#stage .tl'),
+          tis = $$('#stage .ti'),
+          n = tls.length,
+          cols = ['#101C36', '#14295e', '#0e3a4a', '#2a1f4d']
+        gsap.set(tls.slice(1), { opacity: 0, y: 40 })
+        gsap.set(tis.slice(1), { clipPath: 'inset(100% 0 0 0)' })
+        var T = gsap.timeline({
+          scrollTrigger: {
+            trigger: '#story',
+            start: 'top top',
+            end: '+=' + n * (M ? 55 : 70) + '%',
+            pin: true,
+            scrub: 0.6,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+          defaults: { ease: 'power2.inOut' },
+        })
+        T.to('#story .prog i', { scaleX: 1, ease: 'none', duration: n - 1 }, 0)
+        for (var i = 1; i < n; i++) {
+          T.to(tls[i - 1], { opacity: 0, y: -40, duration: 0.4 }, i - 0.1)
+            .to(tis[i], { clipPath: 'inset(0% 0 0 0)', duration: 0.8 }, i - 0.1)
+            .fromTo(
+              tls[i],
+              { opacity: 0, y: 40 },
+              { opacity: 1, y: 0, duration: 0.5 },
+              i + 0.3,
+            )
+            .to(
+              '#story',
+              { backgroundColor: cols[i % cols.length], duration: 0.8 },
+              i - 0.1,
+            )
+        }
+
+        var tr = $('.ht'),
+          dist = function () {
+            return Math.max(0, tr.scrollWidth - window.innerWidth + (M ? 24 : 40))
+          }
+        gsap.set('#hs .prog i', { scaleX: 0 })
+        gsap.to(tr, {
+          x: function () {
+            return -dist()
+          },
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '#hs',
+            start: 'top top',
+            end: function () {
+              return '+=' + dist()
+            },
+            pin: true,
+            scrub: 0.8,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            onUpdate: function (s) {
+              gsap.set('#hs .prog i', { scaleX: s.progress })
+            },
+          },
+        })
+
+        var items = $$('#sync .sy'),
+          pics = $$('#sync .sticky img')
+        if (pics[0]) pics[0].classList.add('on')
+        gsap.set('#sync .prog i', { scaleX: 1 / items.length })
+        items.forEach(function (it, i) {
+          ScrollTrigger.create({
+            trigger: it,
+            start: M ? 'top 62%' : 'top 55%',
+            end: M ? 'bottom 62%' : 'bottom 55%',
+            onToggle: function (s) {
+              if (s.isActive) {
+                pics.forEach(function (x, j) {
+                  x.classList.toggle('on', j === i)
+                })
+                gsap.to('#sync .prog i', {
+                  scaleX: (i + 1) / items.length,
+                  duration: 0.5,
+                })
+              }
+            },
+          })
+          gsap.from($$('.eyebrow,b,h3,p,a', it), {
+            y: 40,
+            opacity: 0,
+            stagger: 0.08,
+            duration: 0.8,
+            scrollTrigger: { trigger: it, start: 'top 80%' },
+          })
+        })
+
+        var r1 = $('#gr1'),
+          r2 = $('#gr2'),
+          gd = function (r) {
+            return Math.max(0, r.scrollWidth - window.innerWidth + 40)
+          }
+        gsap.fromTo(
+          r1,
+          { x: 0 },
+          {
+            x: function () {
+              return -gd(r1)
+            },
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '#gal',
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 0.8,
+              invalidateOnRefresh: true,
+            },
+          },
+        )
+        gsap.fromTo(
+          r2,
+          {
+            x: function () {
+              return -gd(r2)
+            },
+          },
+          {
+            x: 0,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '#gal',
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: 0.8,
+              invalidateOnRefresh: true,
+            },
+          },
+        )
+
+        gsap.fromTo(
+          '#adm',
+          { clipPath: 'inset(8% 5% 0% 5%)' },
+          {
+            clipPath: 'inset(0% 0% 0% 0%)',
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '#adm',
+              start: 'top 100%',
+              end: 'top 35%',
+              scrub: true,
+            },
+          },
+        )
+        gsap.from('#adm .row>*', {
+          y: 40,
+          opacity: 0,
+          stagger: 0.15,
+          duration: 0.9,
+          scrollTrigger: { trigger: '#adm .row', start: 'top 90%' },
+        })
+      })
+
+      $$('#app img').forEach(function (i) {
+        if (!i.complete)
+          i.addEventListener(
+            'load',
+            function () {
+              clearTimeout(rt)
+              rt = setTimeout(function () {
+                ScrollTrigger.refresh()
+              }, 200)
+            },
+            { once: true },
+          )
+      })
+      clearTimeout(rt)
+      rt = setTimeout(function () {
+        ScrollTrigger.refresh()
+      }, 350)
+    } catch (e) {
+      teardown()
+      console.warn('Animations disabled:', e)
+    }
+  }
+
+  /* ===== FORM ===== */
+  function setupForm() {
+    var f = $('#enq')
+    if (!f) return
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault()
+      var ok = true
+      var v = {
+        n: $('#n').value.trim(),
+        p: $('#p').value.trim(),
+        m: $('#m').value.trim(),
+        c: $('#c').value,
+        g: $('#g').value.trim(),
+      }
+      function set(id, msg) {
+        var i = $('#' + id),
+          e = $('#e-' + id)
+        e.textContent = msg
+        if (i.type !== 'checkbox') i.setAttribute('aria-invalid', msg ? 'true' : 'false')
+        if (msg) ok = false
+      }
+      set('n', v.n.length < 2 ? 'Please enter a name.' : '')
+      set(
+        'p',
+        /^(\+?91[\s-]?)?[0-9][0-9\s-]{8,13}$/.test(v.p)
+          ? ''
+          : 'Enter a valid phone number (10 digits).',
+      )
+      set(
+        'm',
+        v.m && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.m)
+          ? 'Enter a valid email address.'
+          : '',
+      )
+      set('c', v.c ? '' : 'Please choose a programme.')
+      set('k', $('#k').checked ? '' : 'Consent is required.')
+      if (!ok) {
+        var b = $('[aria-invalid=true]', f)
+        if (b) b.focus()
+        return
+      }
+      var cn = COURSES[v.c].title,
+        body =
+          'Name: ' +
+          v.n +
+          '\nPhone: ' +
+          v.p +
+          (v.m ? '\nEmail: ' + v.m : '') +
+          '\nProgramme: ' +
+          cn +
+          (v.g ? '\n\nMessage:\n' + v.g : '')
+      var s = $('#fs')
+      s.className = 'status'
+      s.textContent =
+        'Your email app should open with the enquiry ready to send. Nothing has been sent yet — if it doesn’t open, please call ' +
+        C.phones[0].t +
+        '.'
+      window.location.href =
+        'mailto:' +
+        C.emails[0] +
+        '?subject=' +
+        encodeURIComponent('Enquiry: ' + cn) +
+        '&body=' +
+        encodeURIComponent(body)
+    })
+  }
+
+  /* ===== BOOT ===== */
+  var booted = false
+  function boot() {
+    if (booted) return
+    booted = true
+    $('#hdr-root').innerHTML = headerHTML()
+    $('#ftr-root').innerHTML = footerHTML()
+    $('#burger').addEventListener('click', function () {
+      $('#mob').classList.add('open')
+      document.body.classList.add('lock')
+      this.setAttribute('aria-expanded', 'true')
+      $('#mclose').focus()
+    })
+    $('#mclose').addEventListener('click', function () {
+      closeMenu()
+      $('#burger').focus()
+    })
+    $('#mob').addEventListener('click', function (e) {
+      if (e.target.closest('a')) closeMenu()
+    })
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeMenu()
+        lbClose()
+      }
+      if ($('#lb').classList.contains('open')) {
+        if (e.key === 'ArrowRight') lbShow(lbi + 1)
+        if (e.key === 'ArrowLeft') lbShow(lbi - 1)
+      }
+    })
+    $$('.dd>button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var o = b.parentNode.classList.toggle('open')
+        b.setAttribute('aria-expanded', String(o))
+      })
+    })
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.dd'))
+        $$('.dd').forEach(function (d) {
+          d.classList.remove('open')
+        })
+      var t = e.target.closest('[data-lb]')
+      if (t) lbOpen(+t.dataset.lb)
+    })
+    $('#lb .x').addEventListener('click', lbClose)
+    $('#lb .pv').addEventListener('click', function () {
+      lbShow(lbi - 1)
+    })
+    $('#lb .nx').addEventListener('click', function () {
+      lbShow(lbi + 1)
+    })
+    $('#lb').addEventListener('click', function (e) {
+      if (e.target === this) lbClose()
+    })
+    $('#totop').addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' })
+    })
+    window.addEventListener('scroll', hdrState, { passive: true })
+    window.addEventListener('hashchange', route)
+    window.addEventListener(
+      'orientationchange',
+      function () {
+        setTimeout(function () {
+          if (window.ScrollTrigger) ScrollTrigger.refresh()
+        }, 400)
+      },
+      { passive: true },
+    )
+    route()
+  }
+
+  /* ===== PRELOADER ===== */
+  var ready = false,
+    plDone = false
+  function startPreloader() {
+    var pl = $('#pl'),
+      bar = $('.plb i'),
+      num = $('.pln'),
+      t0 = performance.now(),
+      shown = 0,
+      scene = null,
+      raf = 0
+    document.body.classList.add('lock')
+    try {
+      if (window.THREE && !reduce) {
+        var T = THREE,
+          cv = $('#plc'),
+          r = new T.WebGLRenderer({ canvas: cv, alpha: true, antialias: true })
+        r.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2))
+        r.setSize(200, 200, false)
+        var s = new T.Scene(),
+          cam = new T.PerspectiveCamera(40, 1, 0.1, 50)
+        cam.position.z = 7
+        var g = new T.Group()
+        s.add(g)
+        g.add(
+          new T.Mesh(
+            new T.IcosahedronGeometry(1.5, 1),
+            new T.MeshBasicMaterial({ color: 0xe9b45b, wireframe: true }),
+          ),
+          new T.Mesh(
+            new T.OctahedronGeometry(0.7),
+            new T.MeshBasicMaterial({ color: 0x6f8cf0, wireframe: true }),
+          ),
+        )
+        ;[2.2, 2.8].forEach(function (rr, i) {
+          var m = new T.Mesh(
+            new T.TorusGeometry(rr, 0.012, 6, 90),
+            new T.MeshBasicMaterial({ color: 0x8aa4ff }),
+          )
+          m.rotation.x = 1.2 + i * 0.5
+          m.rotation.y = i * 0.7
+          g.add(m)
+        })
+        scene = {
+          draw: function (t, p) {
+            g.rotation.y = t * 0.7
+            g.rotation.x = t * 0.3
+            g.scale.setScalar(0.55 + p * 0.45)
+            r.render(s, cam)
+          },
+          kill: function () {
+            s.traverse(function (o) {
+              if (o.geometry) o.geometry.dispose()
+              if (o.material) o.material.dispose()
+            })
+            r.dispose()
+          },
+        }
+      }
+    } catch (e) {
+      scene = null
+    }
+    function finish() {
+      if (plDone) return
+      plDone = true
+      cancelAnimationFrame(raf)
+      document.body.classList.remove('lock')
+      var out = function () {
+        if (scene) scene.kill()
+        pl.remove()
+        if (window.ScrollTrigger) ScrollTrigger.refresh()
+      }
+      pl.style.animation = 'none'
+      if (window.gsap && !reduce) {
+        gsap
+          .timeline({ onComplete: out })
+          .to('#pl .plw,#pl .pls,#pl .plb,#pl .pln,#pl canvas', {
+            y: -30,
+            opacity: 0,
+            duration: 0.45,
+            stagger: 0.05,
+            ease: 'power2.in',
+          })
+          .to(
+            pl,
+            { clipPath: 'inset(0 0 100% 0)', duration: 0.9, ease: 'power4.inOut' },
+            '-=.1',
+          )
+      } else {
+        pl.style.transition = 'opacity .4s'
+        pl.style.opacity = 0
+        setTimeout(out, 420)
+      }
+    }
+    function tick(now) {
+      var el = now - t0,
+        min = reduce ? 200 : 1900,
+        target = ready ? 100 : Math.min(88, (el / 2600) * 88)
+      shown += (target - shown) * 0.07
+      if (ready && el > min && shown > 99.3) shown = 100
+      bar.style.transform = 'scaleX(' + shown / 100 + ')'
+      num.textContent = Math.round(shown) + '%'
+      if (scene) scene.draw(el / 1000, shown / 100)
+      if (shown >= 100) {
+        setTimeout(finish, 220)
+        return
+      }
+      if (el > 7000) ready = true
+      raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+  }
+
+  function begin() {
+    startPreloader()
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', begin)
+  else begin()
+
+  function siteReady() {
+    boot()
+    ready = true
+  }
+  if (document.readyState === 'complete') siteReady()
+  else window.addEventListener('load', siteReady)
+  setTimeout(siteReady, 5000)
+})()
+</script>
+</body>
 </html>
