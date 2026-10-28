@@ -762,8 +762,8 @@ ul {
 /* IMAGE REVEAL */
 .big {
   position: relative;
-  height: clamp(280px, 72svh, 820px);
-  height: clamp(280px, 72dvh, 820px);
+  height: clamp(340px, 72svh, 820px);
+  height: clamp(340px, 72dvh, 820px);
   overflow: hidden;
   background: var(--mid);
 }
@@ -794,21 +794,42 @@ ul {
   z-index: 2;
   left: var(--pad);
   right: var(--pad);
-  bottom: clamp(1.2rem, 5vw, 4rem);
+  bottom: clamp(1.35rem, 4vw, 3.4rem);
   color: #fff;
-  max-width: 900px;
+  max-width: min(900px, calc(100% - var(--pad) * 2));
 }
 
 .big .cap h2 {
-  font-size: clamp(1.8rem, 6vw, 5.5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.06em;
+  font-size: clamp(1.85rem, 5vw, 5.2rem);
+  line-height: 1.02;
   margin: 0;
+  max-width: 100%;
 }
 
 /* PINNED STORY */
 .story {
+  position: relative;
   background: var(--navy);
   color: #e8ecf6;
   padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+}
+
+.story-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--navy);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.slist,
+.stage {
+  position: relative;
+  z-index: 1;
 }
 
 .stage {
@@ -886,8 +907,14 @@ ul {
 
 .stage .ti {
   grid-area: 1 / 1;
+  height: 100%;
   overflow: hidden;
   background: var(--blue);
+}
+
+.gs-on .stage .tl + .tl,
+.gs-on .stage .ti + .ti {
+  opacity: 0;
 }
 
 .stage .ti img {
@@ -929,8 +956,9 @@ ul {
 
   .stage .pics {
     order: -1;
-    height: 36svh;
-    height: 36dvh;
+    height: 32svh;
+    height: 32dvh;
+    max-height: 280px;
   }
 
   .stage .tl {
@@ -944,6 +972,7 @@ ul {
 
   .stage .tl p {
     font-size: 0.95rem;
+    margin-bottom: 0;
   }
 
   .prog {
@@ -2845,8 +2874,8 @@ form {
       '</h2><p data-a>BGIC Institute is an educational group that provides coaching and tuition classes up to Class 12 — all subjects and all streams, including Arts, Commerce and Science.</p><p data-a>Computer Science is taught for Classes 9–12 in an excellent computer lab, NIOS students receive specialised coaching, and English speaking classes help build confidence — all “at reasonable cost with excellent infrastructure and well qualified experienced faculty”, in the institute’s words.</p><div class="facts" data-a><span>Mahavir Enclave, New Delhi</span><span>CBSE &amp; NIOS</span><span>Arts · Commerce · Science</span></div><a class="btn btn-o" data-a href="#/about" style="margin-top:1.3rem">Read more</a></div></div></section>' +
       '<section class="big" id="big"><div class="fr">' +
       img('slider/4.jpg', 'Learning environment at BGIC Institute') +
-      '</div><div class="cap"><span class="eyebrow" style="color:var(--amber)">Computer lab</span><h2>Practical training, with <em>why</em>.</h2></div></section>' +
-      '<section class="story" id="story"><div class="slist wrap"><span class="eyebrow">Teaching approach</span>' +
+      '</div><div class="cap"><span class="eyebrow" style="color:var(--amber)">Computer lab</span><h2><span>Practical training,</span><span>with <em>why</em>.</span></h2></div></section>' +
+      '<section class="story" id="story"><div class="story-bg" aria-hidden="true"></div><div class="slist wrap"><span class="eyebrow">Teaching approach</span>' +
       slist +
       '</div><div class="stage" id="stage"><div><span class="eyebrow">Teaching approach</span><div class="txt">' +
       tls +
@@ -3364,23 +3393,23 @@ form {
 
         gsap.fromTo(
           '#big .fr',
-          { clipPath: 'inset(14% 12% 14% 12%)' },
+          { clipPath: 'inset(8% 6% 8% 6%)' },
           {
             clipPath: 'inset(0% 0% 0% 0%)',
             ease: 'none',
             scrollTrigger: {
               trigger: '#big',
-              start: 'top 90%',
-              end: 'top 15%',
+              start: 'top 92%',
+              end: 'top 60%',
               scrub: true,
             },
           },
         )
         gsap.fromTo(
           '#big img',
-          { yPercent: -6, scale: 1.15 },
+          { yPercent: -4, scale: 1.08 },
           {
-            yPercent: 6,
+            yPercent: 4,
             scale: 1,
             ease: 'none',
             scrollTrigger: {
@@ -3392,45 +3421,40 @@ form {
           },
         )
         gsap.from('#big .cap', {
-          y: 60,
           opacity: 0,
-          duration: 1,
-          scrollTrigger: { trigger: '#big', start: 'top 45%' },
+          duration: 0.6,
+          scrollTrigger: { trigger: '#big', start: 'top 75%' },
         })
 
         var tls = $$('#stage .tl'),
           tis = $$('#stage .ti'),
           n = tls.length,
-          cols = ['#101C36', '#14295e', '#0e3a4a', '#2a1f4d']
-        gsap.set(tls.slice(1), { opacity: 0, y: 40 })
-        gsap.set(tis.slice(1), { clipPath: 'inset(100% 0 0 0)' })
+          cols = ['#101C36', '#14295e', '#0e3a4a', '#2a1f4d'],
+          fade = 0.28,
+          step = 1,
+          total = (n - 1) * step
+        gsap.set(tls.slice(1), { autoAlpha: 0 })
+        gsap.set(tis.slice(1), { autoAlpha: 0 })
         var T = gsap.timeline({
           scrollTrigger: {
             trigger: '#story',
             start: 'top top',
-            end: '+=' + n * (M ? 55 : 70) + '%',
+            end: '+=' + n * (M ? 50 : 62) + '%',
             pin: true,
-            scrub: 0.6,
+            scrub: 0.45,
             anticipatePin: 1,
             invalidateOnRefresh: true,
           },
-          defaults: { ease: 'power2.inOut' },
+          defaults: { ease: 'power1.inOut' },
         })
-        T.to('#story .prog i', { scaleX: 1, ease: 'none', duration: n - 1 }, 0)
+        T.to('#story .prog i', { scaleX: 1, ease: 'none', duration: total }, 0)
         for (var i = 1; i < n; i++) {
-          T.to(tls[i - 1], { opacity: 0, y: -40, duration: 0.4 }, i - 0.1)
-            .to(tis[i], { clipPath: 'inset(0% 0 0 0)', duration: 0.8 }, i - 0.1)
-            .fromTo(
-              tls[i],
-              { opacity: 0, y: 40 },
-              { opacity: 1, y: 0, duration: 0.5 },
-              i + 0.3,
-            )
-            .to(
-              '#story',
-              { backgroundColor: cols[i % cols.length], duration: 0.8 },
-              i - 0.1,
-            )
+          var at = (i - 1) * step + (step - fade)
+          T.to(tls[i - 1], { autoAlpha: 0, duration: fade }, at)
+            .fromTo(tls[i], { autoAlpha: 0 }, { autoAlpha: 1, duration: fade }, at)
+            .fromTo(tis[i], { autoAlpha: 0 }, { autoAlpha: 1, duration: fade }, at)
+            .to(tis[i - 1], { autoAlpha: 0, duration: fade }, at)
+            .to('.story-bg', { backgroundColor: cols[i % cols.length], duration: fade }, at)
         }
 
         var tr = $('.ht'),
